@@ -20,16 +20,22 @@ h3. Create your own filters
 
 Creating filters is very easy. Basically they are just methods which take one parameter and return a modified string. You can use your own filters by passing an array of modules to the render call like this @template.render(assigns, [MyTextFilters, MyDateFilters])
 
+<pre><code>
 module TextFilter
   def textilize(input)
     RedCloth.new(input).to_html
   end
 end
+</code></pre>
 
+<pre><code>
 @template = Liquid::Template.parse(" {{ '*hi*' | textilize }} ")
-@template.render({}, [TextFilter])              # => "<b>hi</b>" 
+@template.render({}, :filters => [TextFilter])              # => "<b>hi</b>" 
+</code></pre>
+
 Alternatively you can also register your filters globally
 
+<pre><code>
 module TextFilter
   def textilize(input)
     RedCloth.new(input).to_html
@@ -37,14 +43,20 @@ module TextFilter
 end
 
 Liquid::Template.register_filter(TextFilter)
+</code></pre>
 
+Once the filter is globally registered you can simply use it:
+
+<pre><code>
 @template = Liquid::Template.parse(" {{ '*hi*' | textilize }} ")
 @template.render              # => "<b>hi</b>" 
+</code></pre>
 
 h3. Create your own tag blocks
 
 All tag blocks are parsed by liquid. To create a new block you just have to inherit from Liquid::Block and register your block with Liquid::Template
 
+<pre><code>
   class Random < Liquid::Block                                             
     def initialize(markup, tokens)
        super 
@@ -61,6 +73,9 @@ All tag blocks are parsed by liquid. To create a new block you just have to inhe
   end
 
 Liquid::Template.register_tag('random', Random)
+</code></pre>
 
+<pre><code>
 @template = Liquid::Template.parse(" {% random 5 %} wanna hear a joke? {% endrandom %} ")
 @template.render              # => in 20% of the cases this will output : wanna hear a joke?
+</code></pre>
