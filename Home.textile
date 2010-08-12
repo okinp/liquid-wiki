@@ -24,7 +24,6 @@ Hello {{ '*tobi*' | textilize | upcase }}
 Hello {{ now | date: "%Y %h" }}
 </code></pre>
 
-!http://help.shopify.com/attachment/asset/390/filterchain.jpg!
 
 h2. Tags
 
@@ -166,6 +165,7 @@ There are several attributes you can use to influence which items you receive in
 
 *limit* lets you restrict how many items you get
 *offset* lets you start the collection with the nth item.
+*descending* Reverses the loop 
 
 <pre><code>
   # array = [1,2,3,4,5,6]
