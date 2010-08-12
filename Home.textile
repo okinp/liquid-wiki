@@ -26,6 +26,7 @@ h2. Who uses Liquid?
 * "SandwichBoard":http://www.sandwichboard.com/
 * "YikeSite (CMS)":http://www.yikesite.com/
 * "Simplicant (Applicant Tracking System)":http://www.simplicant.com/
+* "3scale (API Management System)":http://www.3scale.net/
 * ...Add yours :)
 
 h2. Why should I use Liquid?
