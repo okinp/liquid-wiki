@@ -12,7 +12,8 @@ end</code></pre>
 
 And you have a chunk of text that you want to Liquidize by inserting some details about your products:
 
-<pre><code>sentence = "I'm running to the store with {{ product.price }} dollars in my pocket to buy a {{ product.name }}."</code></pre>
+<pre><code>sentence = "I'm running to the store with {{ product.price }} dollars in my pocket "
+sentence += "to buy a {{ product.name }}."</code></pre>
 
 And you create a product and parse the sentence:
 
@@ -21,7 +22,8 @@ puts Liquid::Template.parse(sentence).render('product' => my_purchase)</code></p
 
 You excitedly execute your code expecting to see your beautiful new sentence, but instead you get:
 
-<pre><code>I'm running to the store with Liquid error: undefined method `to_liquid' for #<Product:0x1388c08 @title="box of sausages", @price=20> dollars in my pocket to buy a Liquid error: undefined method `to_liquid' for #<Product:0x1388c08 @title="box of sausages", @price=20>.</code></pre>
+<pre><code>I'm running to the store with Liquid error: undefined method `to_liquid' for #<Product:0x1388c08 
+...</code></pre>
 
 to_liquid? Where did that come from? Turns out you need to add a method to your class that returns your instance variables as part of a hash. (Liquid was built to be very paranoid about not letting people access something they're not supposed to, so you need to explicitly let liquid know how to access everything in your object.) So we update the Product class description to include that method:
 
