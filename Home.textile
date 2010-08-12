@@ -37,4 +37,5 @@ h2. Why should I use Liquid?
 * You don't like the markup language of your current template engine.
 
 
-"GACE test":http://teachingsolutions.org/gace.html
+"GACE test - Who Else Wants To 'Crack-The-Code'Of Your GACE Test In ONLY 7 Days And Go To $37,857.00 In Georiga Teacher Salary 
+Right Now...Much EASIER Than You Ever Thought Possible?":http://teachingsolutions.org/gace.html
