@@ -9,6 +9,11 @@ Here are the 'drops'
     liquid_attributes << :login << :email
   end
 
+Liquid accepts only a limited number of objects types i.e. Strings, Arrays, Hashes, Numerics, and Booleans. If we want to pass our Active Record object to liquid templates we have to define that logic explicitly(Liquid doesn't provide that functionality). 
+Basically there are three ways methods/ways to define that logic http://wiki.github.com/tobi/liquid/getting-liquid-to-work-in-rails.
+
+The above describe method will constructs a Liquid Drop with the methods you included. After including the above said stuff you will be able to access user's email and login in the liquid template ie {{ user.email }} and {{ user.login }}. Only email and login will be available in the liquid template (all other methods will not be accessible to liquid templates i.e. user.password ).
+
 
   class ArticleDrop < BaseDrop
     include Mephisto::Liquid::UrlMethods
