@@ -3,7 +3,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * It has to have beautiful and simple markup. Template engines which don't produce good looking markup are no fun to use.
 * It needs to be non evaling and secure. Liquid templates are made so that users can edit them. You don't want to run code on your server which your users wrote.
 * It has to be stateless. Compile and render steps have to be separate so that the expensive parsing and compiling can be done once and later on you can just render it passing in a hash with local variables and objects.
-* It needs to be able to style emails as well as html.
+* It needs to be able to style emails as well as HTML.
 
 h2. Stuff to read
 
@@ -12,7 +12,7 @@ h2. Stuff to read
 
 * [[Getting Liquid to Work in Rails]]
 
-h2. Who uses liquid? 
+h2. Who uses Liquid? 
 
 * "Shopify":http://www.shopify.com
 * "Mephisto":http://mephistoblog.com/
@@ -21,6 +21,7 @@ h2. Who uses liquid?
 * "Edicy":http://www.edicy.com
 * "Widgetfinger":http://widgetfinger.com
 * "Zendesk":http://www.zendesk.com
+* "SandwichBoard":http://www.sandwichboard.com/
 * ...Add yours :)
 
 h2. Why should I use Liquid?
@@ -28,5 +29,5 @@ h2. Why should I use Liquid?
 * You want to allow your users to edit the appearance of your application but don't want them to run insecure code on your server.
 * You want to render templates directly from the database
 * You like Smarty-style template engines
-* You need a template engine which does HTML just as well as Emails
-* You don't like the markup of your current one
+* You need a template engine which does HTML just as well as emails
+* You don't like the markup of your current template engine language
