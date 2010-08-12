@@ -22,6 +22,8 @@ Hello {{user.name}}
 Hello {{ 'tobi' }}
 </pre>
 
+<a name="filters"></a>
+
 h2. Advanced output: Filters
 
 Output markup takes filters.
