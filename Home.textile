@@ -25,6 +25,7 @@ h2. Who uses Liquid?
 * "Zendesk":http://www.zendesk.com
 * "SandwichBoard":http://www.sandwichboard.com/
 * "YikeSite (CMS)":http://www.yikesite.com/
+* "Simplicant (Applicant Tracking System)":http://www.simplicant.com/
 * ...Add yours :)
 
 h2. Why should I use Liquid?
