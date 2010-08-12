@@ -51,6 +51,10 @@ h3. Standard Filters
 * **truncate** - truncate a string down to x characters
 * **truncatewords** - undocumented
 * **upcase** - convert a input string to UPCASE
+* **minus** - subtracts two numbers 
+* **plus** - add to numbers
+* **times** - multiply two numbers
+* **divided_by** - divide two numbers
 
 h1. Tags
 
