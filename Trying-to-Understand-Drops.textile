@@ -9,6 +9,7 @@ Here are the 'drops'
     liquid_attributes << :login << :email
   end
 
+<b>Explanation of above code</b><br/>
 Liquid accepts only a limited number of objects types i.e. Strings, Arrays, Hashes, Numerics, and Booleans. If we want to pass our Active Record object to liquid templates we have to define that logic explicitly(Liquid doesn't provide that functionality). 
 Basically there are three ways methods/ways to define that logic http://wiki.github.com/tobi/liquid/getting-liquid-to-work-in-rails.
 
