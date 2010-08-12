@@ -1,80 +1,21 @@
-h2. Using .liquid as a template handler in your views
+Liquid comes with a proper init.rb by default.
 
-Liquid comes with a proper @init.rb@ file, by default.
-To start using Liquid, just extract it into @vendor/plugins@.
-Better yet, use the @./script/plugin@ script to install Liquid:
+To start using liquid just extract it into vendor/plugins or better yet use the ./script/plugin script to install liquid.
 
-pre. script/plugin install http://liquid-markup.googlecode.com/svn/trunk
+You can now start using templates with the .liquid file type.
 
-You can now start using templates with the @.liquid@ file type (ie, extension).
+h3. Notes
 
-h3. Helpers become filters
-
-A note about helpers.
-Liquid's Rails plugin tries to use your helpers as Filters.
-Your helpers will always receive the piped-in text as the first parameter,
-and then any Filter parameters (passed after the colon).
+A note about helpers. The liquid rails plugin tries to use your helpers as Filters. Your helpers will always receive the piped in text as first parameter and any Filter parameters after this.
 
 Helper:
-<pre>
-module ApplicationHelper
-  def truncate(input, length)
-    input[0..length] + '...' 
-  end
-end
-</pre>
+
+   module ApplicationHelper
+       def truncate(input, length)
+           input[0..length] + '...' 
+       end
+   end
 
 Liquid:
-<pre>
-{{ 'This is a long section of text' | truncate: 3 }} #=>   Thi... 
-</pre>
-
-h3. Using .liquid as a layout
-
-Insert
-<pre>
-{{ content_for_layout }}
-</pre>
-in your liquid layout where you would put @<%= yield %>@ in an erb layout.
-
-Note: if you are collecting content with @<% content_for :foo do %> ... <% end %>@ then there is currently no way to access this in a liquid layout.
-
-
-h2. Using Rails model data and methods in Liquid templates
-
-When you pass variables to be available in a Liquid template,
-Liquid accepts a limited number of object types --
-Strings, Arrays, Hashes, Numerics, and Booleans.
-If you'd like to pass your ActiveRecord (or other) objects to a Liquid template,
-you have three basic approaches:
-
-The easy way is to add a @liquid_methods@ call:
-
-<pre>
-class Post < ActiveRecord::Base
-  liquid_methods :title, :body, :comments
-...
-</pre>
-
-"Behind the scenes":http://github.com/tobi/liquid/tree/master/lib/liquid/module_ex.rb,
-@liquid_methods@ actually constructs a
-"Liquid Drop":http://liquid.rubyforge.org/classes/Liquid/Drop.html with the methods you include.
-This way, you have lazy loading
-(say, of associated models such as "comments" in the example above) of methods.
-
-An alternate route is to add a @to_liquid@ call in your object,
-returning either one of the types listed above (string, array, hash, etc)
-or an object that in turn responds to @to_liquid@. 
-
-<pre>
-class Post < ActiveRecord::Base
-...
- def to_liquid
-    {'title' => title, 'body' => body}
-  end
-</pre>
-
-Finally, you can write and register a completely new
-"Liquid Drop":http://liquid.rubyforge.org/classes/Liquid/Drop.html class.
-This enables you to pull from various models
-and helps you consolidate (lazy-loaded) methods used just for passing data to templates.
+  
+  {{ 'This is a long section of text' | truncate: 3 }} #=>   Thi... 
