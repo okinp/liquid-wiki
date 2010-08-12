@@ -61,8 +61,8 @@ We made 1 million dollars {% comment %} in losses {% endcomment %} this year
 
 h2. If / Else
 
-<code>if / else</code> should be well known from any imaginable programming language.
-Liquid allows you to write simple expressions in the <code>if</code> (and optionally, <code>else</code>) clause:
+@if / else@ should be well known from any imaginable programming language.
+Liquid allows you to write simple expressions in the @if@ (and optionally, @else@) clause:
 
 <pre><code>
 {% if user %}
