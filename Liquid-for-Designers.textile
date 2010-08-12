@@ -12,11 +12,11 @@ h1. Output
 
 Here is a simple example of Output:
 
-<pre><code>
+<code>
 Hello {{name}}          
 Hello {{user.name}}
 Hello {{ 'tobi' }}
-</code></pre>
+</code>
 
 h2. Advanced output: Filters
 
