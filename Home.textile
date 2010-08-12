@@ -16,7 +16,7 @@ h2. Stuff to read, watch, etc.
 h2. Who uses Liquid? 
 
 * "Shopify (E-Commerce)":http://www.shopify.com
-* "Tispira (CMS)":http://www.tispira.com
+* "Firelight (CMS)":http://www.pixellent.com/firelight
 * "Zendesk (Support)":http://www.zendesk.com
 * "Cashboard (Business Finance)":http://www.getcashboard.com
 * "Chameleon (Blog Engine)":http://chameleon.wikidot.com
