@@ -296,3 +296,14 @@ Another way of doing this would be to assign @true / false@ values to the variab
 </pre>
 
 If you want to combine a number of strings into a single string and save it to a variable, you can do that with the @capture@ tag. This tag is a block which "captures" whatever is rendered inside it, then assigns the captured value to the given variable instead of rendering it to the screen.
+
+<pre>
+  {% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}
+
+  <label for="{{ attribute_name }}">Color:</label>
+  <select name="attributes[{{ attribute_name }}]" id="{{ attribute_name }}">
+    <option value="red">Red</option>
+    <option value="green">Green</option>
+    <option value="blue">Blue</option>
+  </select>
+</pre>
