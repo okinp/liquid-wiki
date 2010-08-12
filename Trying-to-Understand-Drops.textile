@@ -15,7 +15,7 @@ Basically there are three methods/ways to define that logic "http://wiki.github.
 
 The above describe method will constructs a Liquid Drop with the methods you included. After including the above said stuff you will be able to access user's email and login in the liquid template ie {{ user.email }} and {{ user.login }}. Only email and login will be available in the liquid template (all other methods will not be accessible to liquid templates i.e. user.password ).
 
-
+<pre><code>
   class ArticleDrop < BaseDrop
     include Mephisto::Liquid::UrlMethods
 
@@ -81,4 +81,4 @@ The above describe method will constructs a Liquid Drop with the methods you inc
         contents.reverse! if mode == :single
         contents.detect { |content| !content.blank? }.to_s.strip
       end
-  end
+  end</code></pre>
