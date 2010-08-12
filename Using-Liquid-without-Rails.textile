@@ -83,3 +83,33 @@ end
 </pre>
 
 (Thanks to "Tom's":http://github.com/mojombo "Jekyll":http://github.com/mojombo/jekyll/tree/master/lib/jekyll/post.rb#L122-128 code for helping me figuring this out.)
+
+h2. A bit more detail
+
+Every variable rendered by liquid must either:
+* implement a @to_liquid@ method; or
+* be a Proc. This is called with the @Liquid::Context@ as a parameter and must return an object which responds to @to_liquid@
+
+Liquid defines @to_liquid@ for the following standard classes: String,  Array, Hash, Numeric, Time, DateTime, Date, TrueClass, FalseClass, NilClass. For each of these, @to_liquid@ just returns the object itself. <em>(See: lib/liquid/extensions.rb)</em>
+
+If the value returned by @to_liquid@ is inserted into the output, it will be further converted with @to_s@ <em>(actually this is done implicitly by Array#join - see lib/liquid/template.rb)</em>
+
+When used in a chained expression like @foo.bar@ or @foo['bar']@, the object returned by @to_liquid@ must either:
+* respond to @has_key?@ and @[]@ (i.e. duck-type like a Hash); or
+* respond to @fetch@ and @[]@ with an Integer argument (i.e. duck-type like an Array); or 
+* respond to @size@ or @first@ or @last@
+
+In each case the object returned must also respond to @to_liquid@ or be a Proc. In the latter case, it will only be called if the previous element in the chain also responds to @[]=@ - that is, if the value can be cached in the parent object.
+
+<em>(See: lib/liquid/context.rb)</em>
+
+<pre>
+>> assigns = {"foo"=>{"bar"=>{"baz"=>lambda { |x| Time.now } }}}
+=> {"foo"=>{"bar"=>{"baz"=>#<Proc:0xb7cd9af8@(irb):11>}}}
+>> t = Liquid::Template.parse("{{ foo.bar.baz }}")
+=> #<Liquid::Template:0xb7d2e738 ... >
+>> t.render(assigns)
+=> "Fri Jun 05 11:23:56 +0100 2009"
+>> assigns
+=> {"foo"=>{"bar"=>{"baz"=>Fri Jun 05 11:23:56 +0100 2009}}}
+</pre>
