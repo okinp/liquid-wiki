@@ -5,9 +5,11 @@ Perhaps someone can comment on what the different drops are doing and their purp
 
 Here are the 'drops'
 
+<pre><code>
   class UserDrop < BaseDrop
     liquid_attributes << :login << :email
   end
+</code></pre>
 
 <b>Explanation of above code</b><br/>
 Liquid accepts only a limited number of objects types i.e. Strings, Arrays, Hashes, Numerics, and Booleans. If we want to pass our Active Record object to liquid templates we have to define that logic explicitly(Liquid doesn't provide that functionality). 
