@@ -5,8 +5,9 @@ Let's say you have a Product class:
 
 <pre><code>class Product
   attr_accessor :name, :price
+
   def initialize(name,price)
-    @name = name
+    @name  = name
     @price = price
   end
 end
@@ -30,7 +31,7 @@ You excitedly execute your code, expecting to see your beautiful new sentence, b
 undefined method `to_liquid' for #<Product:0x1388c08 ...
 </code></pre>
 
-@to_liquid?@
+@to_liquid@ ???
 Where did that come from?
 Turns out you need to add a method to your class that returns your instance variables as part of a hash.
 (Liquid was built to be very paranoid about not letting people access something they're not supposed to,
@@ -39,12 +40,14 @@ So, we update the @Product@ class description to include that method:
 
 <pre><code>class Product
   attr_accessor :name, :price
+
   def initialize(name, price)
-    @name = name
+    @name  = name
     @price = price
   end
-  to_liquid
-    { "name" => self.name,
+
+  def to_liquid
+    { "name"  => self.name,
       "price" => self.price }
   end
 end
