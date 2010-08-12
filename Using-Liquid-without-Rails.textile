@@ -94,12 +94,12 @@ Liquid defines @to_liquid@ for the following standard classes: String,  Array, H
 
 If the value returned by @to_liquid@ is inserted into the output, it will be further converted with @to_s@ <em>(actually this is done implicitly by Array#join - see lib/liquid/template.rb)</em>
 
-When used in a chained expression like @foo.bar@ or @foo['bar']@, the object returned by @to_liquid@ must either:
+When used in a chained expression like @foo.bar@ or @foo['bar']@, the result of @to_liquid@ on the left-hand subexpression must either:
 * respond to @has_key?@ and @[]@ (i.e. duck-type like a Hash); or
 * respond to @fetch@ and @[]@ with an Integer argument (i.e. duck-type like an Array); or 
 * respond to @size@ or @first@ or @last@
 
-In each case the object returned must also respond to @to_liquid@ or be a Proc. In the latter case, it will only be called if the previous element in the chain also responds to @[]=@ - that is, if the value can be cached in the parent object.
+In each case, the object returned after applying the right-hand subexpression must also respond to @to_liquid@ or be a Proc which returns an object that responds to @to_liquid@. In the latter case, it will only be called if the previous element in the chain also responds to @[]=@ - that is, if the value can be cached in the parent object.
 
 <em>(See: lib/liquid/context.rb)</em>
 
