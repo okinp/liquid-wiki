@@ -1,4 +1,4 @@
-There are two types of markup in liquid: Output and Tag. 
+There are two types of markup in Liquid: Output and Tag. 
 
 * Output is surrounded by <pre> {{ two curly brackets }} </pre> 
 * Tags are surrounded by <pre> {% a curly bracket and a percent %} </pre>
@@ -15,7 +15,11 @@ Hello {{ 'tobi' }}
 
 h2. Advanced output: Filters
 
-Output markup takes filters. Filters are simple methods. The first parameter is always the output of the left side of the filter. The return value of the filter will be the new left value when the next filter is run. When there are no more filters the template will receive the resulting string. 
+Output markup takes filters.
+Filters are simple methods.
+The first parameter is always the output of the left side of the filter.
+The return value of the filter will be the new left value when the next filter is run.
+When there are no more filters, the template will receive the resulting string. 
 
 <pre><code>
 Hello {{ 'tobi' | upcase }}
@@ -41,13 +45,15 @@ h3. Standard Filters
 
 h1. Tags
 
-Tags are for the logic in your template. New tags are very easy to code and I hope to get many contributions to the standard tag library after releasing this code.
+Tags are used for the logic in your template.
+New tags are very easy to code, so I hope to get many contributions to the standard tag library after releasing this code.
 
 Here is a list of currently supported tags:
 
 h2. Comments
 
-Comment is the simplest tag. It just swallows content. 
+Comment is the simplest tag.
+It just swallows content. 
 
 <pre><code>
 We made 1 million dollars {% comment %} in losses {% endcomment %} this year
@@ -55,8 +61,8 @@ We made 1 million dollars {% comment %} in losses {% endcomment %} this year
 
 h2. If / Else
 
-If else should be well known from any language imaginable. Liquid allows you to write simple expressions 
-in the if. 
+<code>if / else</code> should be well known from any language imaginable.
+Liquid allows you to write simple expressions in the <code>if</code> clause:
 
 <pre><code>
 {% if user %}
