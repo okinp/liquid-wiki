@@ -52,6 +52,30 @@ Once the filter is globally registered you can simply use it:
 @template.render              # => "<b>hi</b>" 
 </code></pre>
 
+h3. Create your own tags
+
+To create a new tag, simply inherit from Liquid::Tag and register your block with Liquid::Template
+
+<pre><code>
+  class Random < Liquid::Tag                                             
+    def initialize(tag_name, max, tokens)
+       super 
+       @max = max.to_i
+    end
+
+    def render(context)
+      rand(@max).to_s 
+    end    
+  end
+
+Liquid::Template.register_tag('random', Random)
+</code></pre>
+
+<pre><code>
+@template = Liquid::Template.parse(" {% random 5 %}")
+@template.render    # => "3"
+</code></pre>
+
 h3. Create your own tag blocks
 
 All tag blocks are parsed by liquid. To create a new block you just have to inherit from Liquid::Block and register your block with Liquid::Template
