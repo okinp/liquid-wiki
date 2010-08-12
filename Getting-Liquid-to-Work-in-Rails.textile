@@ -27,6 +27,16 @@ Liquid:
 {{ 'This is a long section of text' | truncate: 3 }} #=>   Thi... 
 </pre>
 
+h3. Using .liquid as a layout
+
+Insert
+<pre>
+{{ content_for_layout }}
+</pre>
+in your liquid layout where you would put @<%= yield %>@ in an erb layout.
+
+Note: if you are collecting content with @<%= content_for :foo do %> ... <% end %>@ then there is currently no way to access this in a liquid layout.
+
 
 h2. Using Rails model data and methods in Liquid templates
 
