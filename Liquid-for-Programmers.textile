@@ -58,7 +58,7 @@ All tag blocks are parsed by liquid. To create a new block you just have to inhe
 
 <pre><code>
   class Random < Liquid::Block                                             
-    def initialize(markup, tokens)
+    def initialize(tag_name, markup, tokens)
        super 
        @rand = markup.to_i
     end
