@@ -3,13 +3,15 @@ The secret is creating a @to_liquid@ method on any classes you create.
 
 Let's say you have a Product class:
 
-<pre><code>class Product
+<pre><code>
+class Product
   attr_accessor :name, :price
   def initialize(name,price)
     @name = name
     @price = price
   end
-end</code></pre>
+end
+</code></pre>
 
 And you have a chunk of text that you want to Liquidize by inserting some details about your products:
 
