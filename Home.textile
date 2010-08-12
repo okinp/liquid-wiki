@@ -5,31 +5,29 @@ Liquid is a template engine which was crafted for very specific requirements
 * It has to be stateless. The compile and render steps have to be separate, so that the expensive parsing and compiling can be done once;  later on, you can just render it by passing in a hash with local variables and objects.
 * It needs to be able to style emails as well as HTML.
 
-
 h2. Stuff to read, watch, etc.
 
 * [[Liquid for Programmers]] 
 * [[Liquid for Designers]] 
+
 * [[Getting Liquid to Work in Rails]]
-* "Liquid Screencast":http://railscasts.com/episodes/118-liquid
+
+* "Liquid":http://railscasts.com/episodes/118-liquid (screencast)
 
 h2. Who uses Liquid? 
 
-* "Shopify (E-Commerce)":http://www.shopify.com
-* "Firelight (CMS)":http://www.pixellent.com/firelight
-* "Zendesk (Support)":http://www.zendesk.com
-* "Cashboard (Business Finance)":http://www.getcashboard.com
-* "Chameleon (Blog Engine)":http://chameleon.wikidot.com
-* "Edicy (CMS)":http://www.edicy.com
-* "SandwichBoard (CMS)":http://www.sandwichboard.com
-* "YikeSite (CMS)":http://www.yikesite.com
+* "Shopify":http://www.shopify.com
+* "Mephisto":http://mephistoblog.com/
+* "Chameleon":http://chameleon.wikidot.com/
+* "Cashboard":http://www.getcashboard.com
+* "Edicy":http://www.edicy.com
+* "Widgetfinger":http://widgetfinger.com
+* "Zendesk":http://www.zendesk.com
+* "SandwichBoard":http://www.sandwichboard.com/
+* "YikeSite (CMS)":http://www.yikesite.com/
 * "Simplicant (Applicant Tracking System)":http://www.simplicant.com/
 * "3scale (API Management System)":http://www.3scale.net/
-* "Press Publisher (Magazine Publishing System)":http://www.presspublisher.com/
-* "Canadian Center for Architecture (CCA)":http://www.cca.qc.ca/
-* "Ronin (Invoicing)":http://www.roninapp.com
-* "EV-Manager (Parents Associations Management)":http://www.ev-manager.com
-
+* ...Add yours :)
 
 h2. Why should I use Liquid?
 
