@@ -1,22 +1,19 @@
-Liquid is a template engine which I wrote for very specific requirements
+Liquid is a template engine which was crafted for very specific requirements
 
-It has to have beautiful and simple markup. Template engines which don't produce good looking markup are no fun to use.
-It needs to be non evaling and secure. Liquid templates are made so that users can edit them. You don't want to run code on your server which your users wrote.
-It has to be stateless. Compile and render steps have to be separate so that the expensive parsing and compiling can be done once and later on you can just render it passing in a hash with local variables and objects.
-It needs to be able to style emails as well as html.
-Stuff to read
+* It has to have beautiful and simple markup. Template engines which don't produce good looking markup are no fun to use.
+* It needs to be non evaling and secure. Liquid templates are made so that users can edit them. You don't want to run code on your server which your users wrote.
+* It has to be stateless. Compile and render steps have to be separate so that the expensive parsing and compiling can be done once and later on you can just render it passing in a hash with local variables and objects.
+* It needs to be able to style emails as well as html.
 
-HowTo - Liquid usage
-DesignerHowTo - For the designers
-HowToPatch - How you can help the liquid project with patches
-RailsPlugin - Using Liquid as a rails plugin
-Stuff to watch
+h2. Stuff to read
 
-Liquid installation movie
-Why should I use Liquid?
+* [[Liquid for Programmers]] 
+* [[Liquid for Designers]] 
 
-You want to allow your users to edit the appearance of your application but don't want them to run insecure code on your server.
-You want to render templates directly from the database
-You like Smarty-style template engines
-You need a template engine which does HTML just as well as Emails
-You don't like the markup of your current one
+h2. Why should I use Liquid?
+
+* You want to allow your users to edit the appearance of your application but don't want them to run insecure code on your server.
+* You want to render templates directly from the database
+* You like Smarty-style template engines
+* You need a template engine which does HTML just as well as Emails
+* You don't like the markup of your current one
