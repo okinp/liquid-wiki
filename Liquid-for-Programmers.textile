@@ -1,0 +1,66 @@
+h2. First steps
+
+Its very simple to get started with liquid. A liquid template is rendered in two steps: Parse and Render. 
+For an overview of the liquid syntax please go to [[Home]]. 
+
+<pre><code>
+  @template = Liquid::Template.parse("hi {{name}}") # Parses and compiles the template
+  @template.render( 'name' => 'tobi' )                         # Renders the output => "hi tobi" 
+</code></pre>
+
+The parse step creates a fully compiled template which can be re-used as often as you like. You can store it in memory or in a cache for faster rendering later. 
+
+All parameters you want liquid to work with have to be passed as parameters to the render method. Liquid does not know about your ruby local, instance, and global variables. 
+
+h2. Extending liquid
+
+Extending liquid is very easy. However keep in mind that liquid is a young library and requires some outside help. If you create useful filters and tags please consider creating a patch and attaching it to a ticket here on this trac.
+
+h3. Create your own filters
+
+Creating filters is very easy. Basically they are just methods which take one parameter and return a modified string. You can use your own filters by passing an array of modules to the render call like this @template.render(assigns, [MyTextFilters, MyDateFilters])
+
+module TextFilter
+  def textilize(input)
+    RedCloth.new(input).to_html
+  end
+end
+
+@template = Liquid::Template.parse(" {{ '*hi*' | textilize }} ")
+@template.render({}, [TextFilter])              # => "<b>hi</b>" 
+Alternatively you can also register your filters globally
+
+module TextFilter
+  def textilize(input)
+    RedCloth.new(input).to_html
+  end
+end
+
+Liquid::Template.register_filter(TextFilter)
+
+@template = Liquid::Template.parse(" {{ '*hi*' | textilize }} ")
+@template.render              # => "<b>hi</b>" 
+
+h3. Create your own tag blocks
+
+All tag blocks are parsed by liquid. To create a new block you just have to inherit from Liquid::Block and register your block with Liquid::Template
+
+  class Random < Liquid::Block                                             
+    def initialize(markup, tokens)
+       super 
+       @rand = markup.to_i
+    end
+
+    def render(context)
+      if rand(@rand) == 0 
+         super
+      else
+         ''
+      end
+    end    
+  end
+
+Liquid::Template.register_tag('random', Random)
+
+@template = Liquid::Template.parse(" {% random 5 %} wanna hear a joke? {% endrandom %} ")
+@template.render              # => in 20% of the cases this will output : wanna hear a joke?
