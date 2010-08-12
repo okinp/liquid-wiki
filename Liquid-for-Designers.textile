@@ -49,7 +49,10 @@ h3. Standard Filters
 * **last** - get the last element of the passed in array
 * **join** - join elements of the array with certain character between them
 * **sort** - sort elements of the array
+* **map** - map/collect an array on a given property
 * **size** - return the size of an array or string
+* **escape** - escape a string
+* **escape_once** - returns an escaped version of html without affecting existing escaped entities
 * **strip_html** - strip html from string
 * **strip_newlines** - strip all newlines (\n) from string
 * **newline_to_br** - replace each newline (\n) with html break
