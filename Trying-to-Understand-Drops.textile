@@ -21,7 +21,8 @@ Here are the 'drops'
       @options        = options
       @liquid.update \
         'body'             => @source.body_html,
-        'excerpt'          => (@source.excerpt_html.nil? || @source.excerpt_html.empty? ? nil : @source.excerpt_html),
+        'excerpt'          => (@source.excerpt_html.nil? ||
+                               @source.excerpt_html.empty? ? nil : @source.excerpt_html),
         'accept_comments'  => @source.accept_comments?,
         'is_page_home'     => (options[:page] == true)
     end
@@ -35,7 +36,8 @@ Here are the 'drops'
     end
 
     def sections
-      @sections ||= @source.sections.inject([]) { |all, s| s.home? ? all : all << s.to_liquid } # your days are numbered, home section!
+      @sections ||= @source.sections.inject([]) { |all, s|
+        s.home? ? all : all << s.to_liquid } # your days are numbered, home section!
       @sections ||= liquify(*@source.sections) { |s| s.home? ? nil : s.to_liquid }
     end
 
