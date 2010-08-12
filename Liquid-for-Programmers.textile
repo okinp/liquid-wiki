@@ -1,16 +1,16 @@
 h2. First steps
 
-Its very simple to get started with liquid. A liquid template is rendered in two steps: Parse and Render. 
+It's very simple to get started with Liquid. A liquid template is rendered in two steps: Parse and Render. 
 For an overview of the liquid syntax please read [[Liquid for Designers]]. 
 
 <pre><code>
-  @template = Liquid::Template.parse("hi {{name}}") # Parses and compiles the template
-  @template.render( 'name' => 'tobi' )                         # Renders the output => "hi tobi" 
+  @template = Liquid::Template.parse("hi {{name}}")  # Parses and compiles the template
+  @template.render( 'name' => 'tobi' )               # Renders the output => "hi tobi" 
 </code></pre>
 
 The parse step creates a fully compiled template which can be re-used as often as you like. You can store it in memory or in a cache for faster rendering later. 
 
-All parameters you want liquid to work with have to be passed as parameters to the render method. Liquid does not know about your ruby local, instance, and global variables. 
+All parameters you want Liquid to work with have to be passed as parameters to the render method. Liquid does not know about your ruby local, instance, and global variables. 
 
 h2. Extending liquid
 
