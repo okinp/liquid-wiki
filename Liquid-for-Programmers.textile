@@ -9,10 +9,10 @@ For an overview of the Liquid syntax, please read [[Liquid for Designers]].
   @template.render( 'name' => 'tobi' )               # Renders the output => "hi tobi" 
 </code></pre>
 
-The <code>parse</code> step creates a fully compiled template which can be re-used as often as you like.
+The @parse@ step creates a fully compiled template which can be re-used as often as you like.
 You can store it in memory or in a cache for faster rendering later. 
 
-All parameters you want Liquid to work with have to be passed as parameters to the <code>render</code> method.
+All parameters you want Liquid to work with have to be passed as parameters to the @render@ method.
 Liquid does not know about your Ruby local, instance, and global variables. 
 
 h2. Extending Liquid
@@ -62,7 +62,7 @@ Once the filter is globally registered, you can simply use it:
 
 h3. Create your own tags
 
-To create a new tag, simply inherit from <code>Liquid::Tag</code> and register your block with <code>Liquid::Template</code>.
+To create a new tag, simply inherit from @Liquid::Tag@ and register your block with @Liquid::Template@.
 
 <pre><code>
   class Random < Liquid::Tag                                             
@@ -88,7 +88,7 @@ h3. Create your own tag blocks
 
 All tag blocks are parsed by Liquid.
 To create a new block,
-you just have to inherit from <code>Liquid::Block</code> and register your block with <code>Liquid::Template</code>.
+you just have to inherit from @Liquid::Block@ and register your block with @Liquid::Template@.
 
 <pre><code>
   class Random < Liquid::Block                                             
