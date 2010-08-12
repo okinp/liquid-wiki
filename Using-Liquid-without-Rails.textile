@@ -26,7 +26,8 @@ puts Liquid::Template.parse(sentence).render('product' => my_purchase)
 
 You excitedly execute your code, expecting to see your beautiful new sentence, but instead you get:
 
-<pre><code>I'm running to the store with Liquid error: undefined method `to_liquid' for #<Product:0x1388c08 ...
+<pre><code>I'm running to the store with Liquid error:
+undefined method `to_liquid' for #<Product:0x1388c08 ...
 </code></pre>
 
 @to_liquid?@
