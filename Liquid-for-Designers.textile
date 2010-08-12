@@ -41,18 +41,26 @@ Hello {{ now | date: "%Y %h" }}
 
 h3. Standard Filters
 
-* **capitalize** - capitalize words in the input sentence
 * **date** - reformat a date ("syntax reference":http://liquid.rubyforge.org/classes/Liquid/StandardFilters.html#M000012)
-* **downcase** - convert an input string to downcase
+* **capitalize** - capitalize words in the input sentence
+* **downcase** - convert an input string to lowercase
+* **upcase** - convert a input string to uppercase
 * **first** - get the first element of the passed in array
-* **join** - join elements of the array with certain character between them
 * **last** - get the last element of the passed in array
-* **size** - return the size of an array or string
+* **join** - join elements of the array with certain character between them
 * **sort** - sort elements of the array
+* **size** - return the size of an array or string
 * **strip_html** - strip html from string
+* **strip_newlines** - strip all newlines (\n) from string
+* **newline_to_br** - replace each newline (\n) with html break
+* **replace** - replace each occurrence **e.g.** {{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'
+* **replace_first** - replace the first occurrence **e.g.** {{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'
+* **remove** - remove each occurrence **e.g.** {{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'
+* **remove_first** - remove the first occurrence **e.g.** {{ 'barbar' | remove_first:'bar' }} #=> 'bar'
 * **truncate** - truncate a string down to x characters
-* **truncatewords** - undocumented
-* **upcase** - convert a input string to UPCASE
+* **truncatewords** - truncate a string down to x words
+* **prepend** - prepend a string **e.g.** {{ 'bar' | prepend:'foo' }} #=> 'foobar'
+* **append** - append a string **e.g.** {{ 'foo' | append:'bar' }} #=> 'foobar'
 * **minus** - subtraction **e.g**  {{ 4 | minus:2 }} #=> 2
 * **plus** - addition **e.g**  {{ '1' | plus:'1' }} #=> '11', {{ 1 | plus:1 }} #=> 2
 * **times** - multiplication  **e.g**  {{ 'foo' | times:4 }} #=> 'foofoofoofoo', {{ 5 | times:4 }} #=> 20
@@ -77,7 +85,7 @@ We made 1 million dollars {% comment %} in losses {% endcomment %} this year
 h2. If / Else
 
 @if / else@ should be well known from any imaginable programming language.
-Liquid allows you to write simple expressions in the @if@ (and optionally, @else@) clause:
+Liquid allows you to write simple expressions in the @if@ or @unless@ (and optionally, @elsif@ and @else@) clause:
 
 <pre>
 {% if user %}
@@ -86,6 +94,8 @@ Liquid allows you to write simple expressions in the @if@ (and optionally, @else
 
 {% if user.name == 'tobi' %}
   Hello tobi
+{% elsif user.name == 'bob' %}
+  Hello bob
 {% endif %}
 
 {% if user.name == 'tobi' or user.name == 'bob' %}
@@ -100,8 +110,13 @@ Liquid allows you to write simple expressions in the @if@ (and optionally, @else
   Hello non-tobi
 {% endif %}
 
+# Same as above
+{% unless user.name == 'tobi' %}
+  Hello non-tobi
+{% endif %}
+
 # Check if the user has a credit card
-{% if user.creditcard == null %}
+{% if user.creditcard != null %}
    poor sob
 {% endif %}
 
@@ -280,6 +295,4 @@ Another way of doing this would be to assign @true / false@ values to the variab
 {% endif %}
 </pre>
 
-If you want to combine a number of strings into a single string and save it to a variable, you can do that with the @capture@ tag.
-This tag is a block which "captures" whatever is rendered inside it,
-then assigns the captured value to the given variable instead of rendering it to the screen.
+If you want to combine a number of strings into a single string and save it to a variable, you can do that with the @capture@ tag. This tag is a block which "captures" whatever is rendered inside it, then assigns the captured value to the given variable instead of rendering it to the screen.
