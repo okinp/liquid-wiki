@@ -51,10 +51,10 @@ h3. Standard Filters
 * **truncate** - truncate a string down to x characters
 * **truncatewords** - undocumented
 * **upcase** - convert a input string to UPCASE
-* **minus** - subtracts two numbers 
-* **plus** - add two numbers
-* **times** - multiply two numbers
-* **divided_by** - divide two numbers
+* **minus** - subtraction **e.g**  {{ 4 | minus:2 }} #=> 2
+* **plus** - addition **e.g**  {{ '1' | plus:'1' }} #=> '11', {{ 1 | plus:1 }} #=> 2
+* **times** - multiplication  **e.g**  {{ 'foo' | times:4 }} #=> 'foofoofoofoo', {{ 5 | times:4 }} #=> 20
+* **divided_by** - division **e.g** {{ 10 | devided_by:2 }} #=> 10
 
 h1. Tags
 
