@@ -10,6 +10,12 @@ h2. Stuff to read
 * [[Liquid for Programmers]] 
 * [[Liquid for Designers]] 
 
+h2. Who uses liquid? 
+
+* "Shopify":http://www.shopify.com
+* "Mephisto":http://mephistoblog.com/
+* ... add yours ... :-) 
+
 h2. Why should I use Liquid?
 
 * You want to allow your users to edit the appearance of your application but don't want them to run insecure code on your server.
