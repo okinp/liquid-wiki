@@ -1,7 +1,7 @@
 h2. First steps
 
 Its very simple to get started with liquid. A liquid template is rendered in two steps: Parse and Render. 
-For an overview of the liquid syntax please go to [[Home]]. 
+For an overview of the liquid syntax please read [[Liquid for Designers]]. 
 
 <pre><code>
   @template = Liquid::Template.parse("hi {{name}}") # Parses and compiles the template
