@@ -1,6 +1,6 @@
 There are two types of markup in Liquid: Output and Tag. 
 
-* Output is surrounded by <pre> {{ matched pairs of curly brackets }} </pre> 
+* Output is surrounded by <pre> {{ matched pairs of curly brackets (ie, braces) }} </pre> 
 * Tags are surrounded by <pre> {% matched pairs of curly brackets and percent signs %} </pre>
 
 h1. Output
