@@ -3,8 +3,7 @@ The secret is creating a @to_liquid@ method on any classes you create.
 
 Let's say you have a Product class:
 
-<pre><code>
-class Product
+<pre><code>class Product
   attr_accessor :name, :price
   def initialize(name,price)
     @name = name
@@ -16,17 +15,19 @@ end
 And you have a chunk of text that you want to Liquidize by inserting some details about your products:
 
 <pre><code>sentence = "I'm running to the store with {{ product.price }} dollars in my pocket "
-sentence += "to buy a {{ product.name }}."</code></pre>
+sentence += "to buy a {{ product.name }}."
+</code></pre>
 
 And you create a product and parse the sentence:
 
 <pre><code>my_purchase = Product.new('box of sausages', 20)
-puts Liquid::Template.parse(sentence).render('product' => my_purchase)</code></pre>
+puts Liquid::Template.parse(sentence).render('product' => my_purchase)
+</code></pre>
 
-You excitedly execute your code expecting to see your beautiful new sentence, but instead you get:
+You excitedly execute your code, expecting to see your beautiful new sentence, but instead you get:
 
-<pre><code>I'm running to the store with Liquid error: undefined method `to_liquid' for #<Product:0x1388c08 
-...</code></pre>
+<pre><code>I'm running to the store with Liquid error: undefined method `to_liquid' for #<Product:0x1388c08 ...
+</code></pre>
 
 @to_liquid?@
 Where did that come from?
@@ -45,10 +46,12 @@ So, we update the @Product@ class description to include that method:
     { "name" => self.name,
       "price" => self.price }
   end
-end</code></pre>
+end
+</code></pre>
 
 Run that again and presto:
 
-<pre><code>I'm running to the store with 20 dollars in my pocket to buy a box of sausages.</code></pre>
+<pre><code>I'm running to the store with 20 dollars in my pocket to buy a box of sausages.
+</code></pre>
 
 (Thanks to "Tom's":http://github.com/mojombo "Jekyll":http://github.com/mojombo/jekyll/tree/master/lib/jekyll/post.rb#L122-128 code for helping me figuring this out.)
