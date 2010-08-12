@@ -1,7 +1,7 @@
 There are two types of markup in Liquid: Output and Tag. 
 
-* Output is surrounded by <pre> {{ two curly brackets }} </pre> 
-* Tags are surrounded by <pre> {% a curly bracket and a percent %} </pre>
+* Output is surrounded by <pre> {{ matched pairs of curly brackets }} </pre> 
+* Tags are surrounded by <pre> {% matched pairs of curly brackets and percent signs %} </pre>
 
 h1. Output
 
