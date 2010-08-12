@@ -13,18 +13,18 @@ Liquid's Rails plugin tries to use your helpers as Filters.
 Your helpers will always receive the piped-in text as the first parameter, and then any Filter parameters (passed after the colon).
 
 Helper:
-<pre><code>
+<pre>
    module ApplicationHelper
        def truncate(input, length)
            input[0..length] + '...' 
        end
    end
-</pre></code>
+</pre>
 
 Liquid:
-<pre><code> 
-  {{ 'This is a long section of text' | truncate: 3 }} #=>   Thi... 
-</pre></code>
+<pre>
+{{ 'This is a long section of text' | truncate: 3 }} #=>   Thi... 
+</pre>
 
 
 h2. Using Rails model data and methods in Liquid templates
@@ -35,11 +35,11 @@ If you'd like to pass your ActiveRecord (or other) objects to a Liquid template,
 
 The easy way is to add a @liquid_methods@ call:
 
-<pre><code>
+<pre>
 class Post < ActiveRecord::Base
   liquid_methods :title, :body, :comments
 ...
-</pre></code>
+</pre>
 
 "Behind the scenes":http://github.com/tobi/liquid/tree/master/lib/liquid/module_ex.rb,
 @liquid_methods@ actually constructs a "Liquid Drop":http://liquid.rubyforge.org/classes/Liquid/Drop.html with the methods you include. This way, you have lazy loading (say, of associated models such as "comments" in the example above) of methods.
@@ -47,13 +47,13 @@ class Post < ActiveRecord::Base
 An alternate route is to add a @to_liquid@ call in your object,
 returning either one of the types listed above (string, array, hash, etc) or an object that in turn responds to @to_liquid@. 
 
-<pre><code>
+<pre>
 class Post < ActiveRecord::Base
 ...
  def to_liquid
     {'title' => title, 'body' => body}
   end
-</pre></code>
+</pre>
 
 Finally, you can write and register a completely new "Liquid Drop":http://liquid.rubyforge.org/classes/Liquid/Drop.html class.
 This enables you to pull from various models and helps you consolidate (lazy-loaded) methods used just for passing data to templates.
