@@ -1,21 +1,50 @@
-Liquid comes with a proper init.rb by default.
+h2. Using .liquid as a template handler in your views
 
-To start using liquid just extract it into vendor/plugins or better yet use the ./script/plugin script to install liquid.
+Liquid comes with a proper init.rb by default. To start using liquid just extract it into vendor/plugins or better yet use the ./script/plugin script to install liquid.
 
 You can now start using templates with the .liquid file type.
 
-h3. Notes
+h3. Helpers become filters
 
-A note about helpers. The liquid rails plugin tries to use your helpers as Filters. Your helpers will always receive the piped in text as first parameter and any Filter parameters after this.
+A note about helpers. The liquid rails plugin tries to use your helpers as Filters. Your helpers will always receive the piped-in text as the first parameter, and then any Filter parameters (passed after the colon).
 
 Helper:
-
+<pre><code>
    module ApplicationHelper
        def truncate(input, length)
            input[0..length] + '...' 
        end
    end
+</pre></code>
 
 Liquid:
-  
+<pre><code> 
   {{ 'This is a long section of text' | truncate: 3 }} #=>   Thi... 
+</pre></code>
+
+
+h2. Using Rails model data and methods in liquid templates
+
+When you pass variables to be available in a liquid template, Liquid accepts a limited number of object types -- Strings, Arrays, Hashes, Numerics, and Booleans. If you'd like to pass your ActiveRecord (or other) objects to a liquid template, you have three basic approaches:
+
+The easy way is to add a liquid_methods call:
+
+<pre><code>
+class Post < ActiveRecord::Base
+  liquid_methods :title, :body, :comments
+...
+</pre></code>
+
+"Behind the scenes":http://github.com/tobi/liquid/tree/master/lib/liquid/module_ex.rb, *liquid_methods* actually constructs a "Liquid Drop":http://liquid.rubyforge.org/classes/Liquid/Drop.html with the methods you include. This way you have lazy loading (say, of associated models, like "comments" in the example above) of methods.
+
+An alternate route is to add a to_liquid call in your object, and return either one of the types listed above (string, array, hash, etc) or an object that in turn responds to to_liquid. 
+
+<pre><code>
+class Post < ActiveRecord::Base
+...
+ def to_liquid
+    {'title' => title, 'body' => body}
+  end
+</pre></code>
+
+And finally, you can write and register a completely new "Liquid Drop":http://liquid.rubyforge.org/classes/Liquid/Drop.html class, which enables you to pull from various models, and helps you consolidate (lazy-loaded) methods used just for passing data to templates.
