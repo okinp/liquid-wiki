@@ -9,6 +9,7 @@ h2. Stuff to read, watch, etc.
 
 * [[Liquid for Programmers]] 
 * [[Liquid for Designers]] 
+* [[Using Liquid without Rails]]
 * [[Getting Liquid to Work in Rails]]
 
 * "Liquid":http://railscasts.com/episodes/118-liquid (screencast)
