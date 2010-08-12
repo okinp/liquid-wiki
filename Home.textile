@@ -30,6 +30,7 @@ h2. Who uses Liquid?
 * "3scale (API Management System)":http://www.3scale.net/
 * "Press Publisher (Magazine Publishing System)":http://www.presspublisher.com/
 * "Canadian Center for Architecture (CCA)":http://www.cca.qc.ca/
+* "Ronin":http://www.roninapp.com
 * ...Add yours :)
 
 h2. Why should I use Liquid?
