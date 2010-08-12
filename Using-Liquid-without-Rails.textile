@@ -1,4 +1,5 @@
-Want to use Liquid along with some plain old Ruby code?  The secret is creating a <code>to_liquid</code> method on any classes you create.
+Want to use Liquid along with some plain old Ruby code? 
+The secret is creating a @to_liquid@ method on any classes you create.
 
 Let's say you have a Product class:
 
@@ -25,7 +26,12 @@ You excitedly execute your code expecting to see your beautiful new sentence, bu
 <pre><code>I'm running to the store with Liquid error: undefined method `to_liquid' for #<Product:0x1388c08 
 ...</code></pre>
 
-to_liquid? Where did that come from? Turns out you need to add a method to your class that returns your instance variables as part of a hash. (Liquid was built to be very paranoid about not letting people access something they're not supposed to, so you need to explicitly let liquid know how to access everything in your object.) So we update the Product class description to include that method:
+@to_liquid?@
+Where did that come from?
+Turns out you need to add a method to your class that returns your instance variables as part of a hash.
+(Liquid was built to be very paranoid about not letting people access something they're not supposed to,
+so you need to explicitly let Liquid know how to access everything in your object.)
+So, we update the @Product@ class description to include that method:
 
 <pre><code>class Product
   attr_accessor :name, :price
