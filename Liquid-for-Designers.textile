@@ -3,7 +3,7 @@ There are two types of markup in liquid: Output and Tag.
 * Output is surrounded by <pre> {{ two curly brackets }} </pre> 
 * Tags are surrounded by <pre> {% a curly bracket and a percent %} </pre>
 
-h2. Output
+h1. Output
 
 Here is a simple example of Output:
 
@@ -24,8 +24,22 @@ Hello {{ '*tobi*' | textilize | upcase }}
 Hello {{ now | date: "%Y %h" }}
 </code></pre>
 
+h3. Standard Filters
 
-h2. Tags
+* **capitalize** - capitalize words in the input sentence
+* **date** - reformat a date ("syntax reference":http://liquid.rubyforge.org/classes/Liquid/StandardFilters.html#M000012)
+* **downcase** - convert an input string to downcase
+* **first** - get the first element of the passed in array
+* **join** - join elements of the array with certain character between them
+* **last** - get the last element of the passed in array
+* **size** - return the size of an array or string
+* **sort** - sort elements of the array
+* **strip_html** - strip html from string
+* **truncate** - truncate a string down to x characters
+* **truncatewords** - undocumented
+* **upcase** - convert a input string to UPCASE
+
+h1. Tags
 
 Tags are for the logic in your template. New tags are very easy to code and I hope to get many contributions to the standard tag library after releasing this code.
 
