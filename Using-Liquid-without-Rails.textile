@@ -62,4 +62,17 @@ Run that again and presto:
 <pre><code>I'm running to the store with 20 dollars in my pocket to buy a box of sausages.
 </code></pre>
 
+However, that's a bit verbose, so you may want to use @liquid_methods@, instead:
+
+<pre><code>class Product
+  attr_accessor  :name, :price
+  liquid_methods :name, :price
+
+  def initialize(name, price)
+    @name  = name
+    @price = price
+  end
+end
+</code></pre>
+
 (Thanks to "Tom's":http://github.com/mojombo "Jekyll":http://github.com/mojombo/jekyll/tree/master/lib/jekyll/post.rb#L122-128 code for helping me figuring this out.)
