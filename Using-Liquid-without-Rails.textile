@@ -1,5 +1,9 @@
-Want to use Liquid along with some plain old Ruby code? 
-The secret is creating a @to_liquid@ method on any classes you create.
+Want to use Liquid along with some plain old Ruby code?
+First, of course, you need to tell Ruby about the Liquid library.
+Assuming that you're in the @liquid@ directory, as cloned from GitHub,
+just @require 'lib/liquid'@.
+
+The big secret, however, is creating a @to_liquid@ method for any classes you want Liquid to access.
 
 Let's say you have a Product class:
 
