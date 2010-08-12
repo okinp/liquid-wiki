@@ -73,6 +73,16 @@ New tags are very easy to code, so I hope to get many contributions to the stand
 
 Here is a list of currently supported tags:
 
+* **assign** - Assgins some value to a variable
+* **capture** - Block tag that captures text into a variable
+* **case** - Block tag, its the standard case...when block
+* **comment** - Block tag, comments out the text in the block
+* **cycle** - Cycle is usually used within a loop to alternate between values, like colors or DOM classes.
+* **for** - For loop
+* **if** - Standard if/else block
+* **include** - Includes another template, useful for partials
+* **unless** - Mirror of if statement
+
 h2. Comments
 
 Comment is the simplest tag.
