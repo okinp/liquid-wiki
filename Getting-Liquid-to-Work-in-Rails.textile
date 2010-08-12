@@ -1,0 +1,5 @@
+-- this is a stub
+
+Need to know how to integrate Liquid into Rails.
+
+Is there a guide on the web?
