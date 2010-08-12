@@ -10,6 +10,8 @@ h2. Stuff to read
 * [[Liquid for Programmers]] 
 * [[Liquid for Designers]] 
 
+* [[Getting Liquid to Work in Rails]]
+
 h2. Who uses liquid? 
 
 * "Shopify":http://www.shopify.com
