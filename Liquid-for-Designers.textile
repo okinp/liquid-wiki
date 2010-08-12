@@ -254,7 +254,6 @@ The simplest way to create a variable is with the @assign@ tag, which has a pret
 {% for t in collections.tags %}{% if t == name %}
   <p>Freestyle!</p>
 {% endif %}{% endfor %}
-
 </pre>
 
 Another way of doing this would be to assign @true / false@ values to the variable:
