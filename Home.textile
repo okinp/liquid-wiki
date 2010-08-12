@@ -17,6 +17,7 @@ h2. Who uses liquid?
 * "Chameleon":http://chameleon.wikidot.com/
 * "Cashboard":http://www.getcashboard.com
 * "Edicy":http://www.edicy.com
+* "Widgetfinger":http://widgetfinger.com
 * ...Add yours :)
 
 h2. Why should I use Liquid?
