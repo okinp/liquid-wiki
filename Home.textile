@@ -36,7 +36,7 @@ h2. Comments
 Comment is the simplest tag. It just swallows content. 
 
 <pre><code>
-Hi tobi {% comment %} you stink {% endcomment %}
+We made 1 million dollars {% comment %} in losses {% endcomment %} this year
 </code></pre>
 
 h2. If / Else
@@ -46,21 +46,36 @@ in the if.
 
 <pre><code>
 {% if user %}
-  Hi {{ user.name }}
+  Hello {{ user.name }}
 {% endif %}
 
 {% if user.name == 'tobi' %}
-  hi tobi
+  Hello tobi
+{% endif %}
+
+{% if user.name == 'tobi' or user.name == 'bob' %}
+  Hello tobi or bob
+{% endif %}
+
+{% if user.name == 'bob' and user.age > 45 %}
+  Hello old bob 
 {% endif %}
 
 {% if user.name != 'tobi' %} 
-  hi non-tobi
+  Hello non-tobi
 {% endif %}
 
+# Check if the user has a credit card
 {% if user.creditcard == null %}
    poor sob
 {% endif %}
 
+# Same as above 
+{% if user.creditcard %}
+   poor sob
+{% endif %}
+
+# Check for an empty array
 {% if user.payments == empty %}
    you never paid ! 
 {% endif %}
@@ -72,6 +87,16 @@ in the if.
 {% endif %}
 </code></pre>
 
+# array = 1,2,3
+{% if array includes 2 %} 
+   array includes 2
+{% endif %}
+
+# string = 'hello world' 
+{% if string includes 'hello' %} 
+   string includes 'hello'
+{% endif %}
+
 h2. Case Statement
 
 If you need more than one condition you can use the Case Statement
@@ -80,11 +105,10 @@ If you need more than one condition you can use the Case Statement
 {% case condition %} 
 {% when 1 %} 
 hit 1 
-{% when 2 %} 
-
-hit 2 
+{% when 2 or 3 %} 
+hit 2 or 3
 {% else %} 
-elseblock 
+... else ... 
 {% endcase %} 
 </code></pre>
 
@@ -163,9 +187,8 @@ During every for loop there are following helper variables available for extra s
 
 There are several attributes you can use to influence which items you receive in your loop
 
-*limit* lets you restrict how many items you get
-*offset* lets you start the collection with the nth item.
-*descending* Reverses the loop 
+*limit:int* lets you restrict how many items you get
+*offset:int* lets you start the collection with the nth item.
 
 <pre><code>
   # array = [1,2,3,4,5,6]
@@ -173,6 +196,12 @@ There are several attributes you can use to influence which items you receive in
     {{ item }}
   {% endfor %} 
   # results in 3,4 
+</code></pre>
+
+Reversing the loop 
+
+<pre><code>
+{% for item in collection reversed %} {{item}} {% endfor %}
 </code></pre>
 
 Instead of looping over an existing collection, you can define a range of numbers to loop through. The range can be defined by both literal and variable numbers:
