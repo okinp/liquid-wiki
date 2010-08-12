@@ -1,8 +1,216 @@
-Welcome to the liquid wiki!
+There are two types of markup in liquid: Output and Tag. 
 
-It's nice to be at the Wiki ... but I was hoping for some kind of guide to help
-get Liquid into a Rails Application.
+* Output is surrounded by <pre> {{ two curly brackets }} </pre> 
+* Tags are surrounded by <pre> {% a curly bracket and a percent %} </pre>
 
-I can't seem to find any docs anywhere ..
+h2. Output
 
-Does anyone have a simple Quick Start Guide on how to get Liquid going?
+Here is a simple example of Output:
+
+<pre><code>
+Hello {{name}}          
+Hello {{user.name}}
+Hello {{ 'tobi' }}
+</code></pre>
+
+h2. Advanced output: Filters
+
+Output markup takes filters. Filters are simple methods. The first parameter is always the output of the left side of the filter. The return value of the filter will be the new left value when the next filter is run. When there are no more filters the template will receive the resulting string. 
+
+<pre><code>
+Hello {{ 'tobi' | upcase }}
+Hello tobi has {{ 'tobi' | length }} letters!
+Hello {{ '*tobi*' | textilize | upcase }}
+Hello {{ now | date: "%Y %h" }}
+</code></pre>
+
+!http://help.shopify.com/attachment/asset/390/filterchain.jpg!
+
+h2. Tags
+
+Tags are for the logic in your template. New tags are very easy to code and I hope to get many contributions to the standard tag library after releasing this code.
+
+Here is a list of currently supported tags:
+
+h2. Comments
+
+Comment is the simplest tag. It just swallows content. 
+
+<pre><code>
+Hi tobi {% comment %} you stink {% endcomment %}
+</code></pre>
+
+h2. If / Else
+
+If else should be well known from any language imaginable. Liquid allows you to write simple expressions 
+in the if. 
+
+<pre><code>
+{% if user %}
+  Hi {{ user.name }}
+{% endif %}
+
+{% if user.name == 'tobi' %}
+  hi tobi
+{% endif %}
+
+{% if user.name != 'tobi' %} 
+  hi non-tobi
+{% endif %}
+
+{% if user.creditcard == null %}
+   poor sob
+{% endif %}
+
+{% if user.payments == empty %}
+   you never paid ! 
+{% endif %}
+
+{% if user.age > 18 %}
+   Login here
+{% else %}
+   Sorry, you are too young
+{% endif %}
+</code></pre>
+
+h2. Case Statement
+
+If you need more than one condition you can use the Case Statement
+
+<pre><code>
+{% case condition %} 
+{% when 1 %} 
+hit 1 
+{% when 2 %} 
+
+hit 2 
+{% else %} 
+elseblock 
+{% endcase %} 
+</code></pre>
+
+*Example:*
+
+<pre><code>
+{% case template %}
+	
+{% when 'label' %}
+     // {{ label.title }}
+{% when 'product' %}
+     // {{ product.vendor | link_to_vendor }} / {{ product.title }}
+{% else %}
+     // {{page_title}
+{% endcase %}
+</code></pre>
+
+h2. Cycle
+
+Often you have to alternate between different colors or similar tasks.
+Liquid has build in support for such operations using the cycle tag.
+
+<pre><code>
+{% cycle 'one', 'two', 'three' %} 
+{% cycle 'one', 'two', 'three' %} 
+{% cycle 'one', 'two', 'three' %} 
+{% cycle 'one', 'two', 'three' %} 
+
+will result in 
+
+one
+two
+three
+one
+</code></pre>
+
+If no name is supplied for the cycle group then its assumed that multiple calls with the same parameters are one group. 
+
+If you want to have total control over cycle groups you can optionally specify the name of the group. This can even be a variable.
+
+<pre><code>
+{% cycle 'group 1': 'one', 'two', 'three' %} 
+{% cycle 'group 1': 'one', 'two', 'three' %} 
+{% cycle 'group 2': 'one', 'two', 'three' %} 
+{% cycle 'group 2': 'one', 'two', 'three' %} 
+
+will result in 
+
+one
+two 
+one
+two
+</code></pre>
+
+h2. For loops
+
+Liquid allows for loops over collections
+
+<pre><code>
+  {% for item in array %} 
+    {{ item }}
+  {% endfor %} 
+</code></pre>
+
+During every for loop there are following helper variables available for extra styling needs:
+
+<pre><code>
+ forloop.length      # => length of the entire for loop
+ forloop.index       # => index of the current iteration 
+ forloop.index0	    # => index of the current iteration (zero based) 
+ forloop.rindex     # => how many items are still left?
+ forloop.rindex0   # => how many items are still left? (zero based)
+ forloop.first        # => is this the first iteration?
+ forloop.last         # => is this the last iternation? 
+</code></pre>
+
+There are several attributes you can use to influence which items you receive in your loop
+
+*limit* lets you restrict how many items you get
+*offset* lets you start the collection with the nth item.
+
+<pre><code>
+  # array = [1,2,3,4,5,6]
+  {% for item in array limit:2 offset:2 %} 
+    {{ item }}
+  {% endfor %} 
+  # results in 3,4 
+</code></pre>
+
+Instead of looping over an existing collection, you can define a range of numbers to loop through. The range can be defined by both literal and variable numbers:
+
+<pre><code>
+  # if item.quantity is 4...
+  {% for i in (1..item.quantity) %}
+    {{ i }}
+  {% endfor %}
+  # results in 1,2,3,4
+</code></pre>
+
+h2. Variable Assignment
+
+You can store data in your own variables, to be used in output or other tags as desired. The simplest way to create a variable is with the *assign* tag, which has a pretty straightforward syntax:
+
+<pre><code>
+{% assign name = 'freestyle' %}
+
+{% for t in collections.tags %}{% if t == name %}
+  <p>Freestyle!</p>
+{% endif %}{% endfor %}
+
+</code></pre>
+
+Another way of doing this would be to assign true/false values to the variable:
+
+<pre><code>
+{% assign freestyle = false %}
+
+{% for t in collections.tags %}{% if t == 'freestyle' %}
+  {% assign freestyle = true %}
+{% endif %}{% endfor %}
+
+{% if freestyle %}
+  <p>Freestyle!</p>
+{% endif %}
+
+</code></pre>
+
+If you want to combine a number of strings into a single string and save it to a variable, you can do that with the *capture* tag. This tag is a block which "captures" whatever is rendered inside it and assigns it to the given variable instead of rendering it to the screen.
