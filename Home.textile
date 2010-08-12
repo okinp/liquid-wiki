@@ -16,6 +16,7 @@ h2. Stuff to read, watch, etc.
 
 h2. Who uses Liquid? 
 
+* "EV-Manager":http://www.ev-manager.com
 * "Shopify":http://www.shopify.com
 * "Mephisto":http://mephistoblog.com/
 * "Chameleon":http://chameleon.wikidot.com/
