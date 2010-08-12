@@ -119,7 +119,7 @@ Liquid allows you to write simple expressions in the @if@ (and optionally, @else
 
 h2. Case Statement
 
-If you need more conditions, you can use the Case Statement:
+If you need more conditions, you can use the @case@ statement:
 
 <pre><code>
 {% case condition %} 
@@ -171,6 +171,7 @@ then it's assumed that multiple calls with the same parameters are one group.
 If you want to have total control over cycle groups, you can optionally specify the name of the group.
 This can even be a variable.
 
+
 <pre><code>
 
 {% cycle 'group 1': 'one', 'two', 'three' %} 
@@ -188,7 +189,7 @@ two
 
 h2. For loops
 
-Liquid allows for loops over collections:
+Liquid allows @for@ loops over collections:
 
 <pre><code>
   {% for item in array %} 
@@ -196,7 +197,7 @@ Liquid allows for loops over collections:
   {% endfor %} 
 </code></pre>
 
-During every <code>for</code> loop, the following helper variables are available for extra styling needs:
+During every @for@ loop, the following helper variables are available for extra styling needs:
 
 <pre><code>
  forloop.length      # => length of the entire for loop
@@ -252,7 +253,7 @@ The simplest way to create a variable is with the @assign@ tag, which has a pret
 
 </code></pre>
 
-Another way of doing this would be to assign true/false values to the variable:
+Another way of doing this would be to assign @true / false@ values to the variable:
 
 <pre><code>
 {% assign freestyle = false %}
@@ -267,4 +268,6 @@ Another way of doing this would be to assign true/false values to the variable:
 
 </code></pre>
 
-If you want to combine a number of strings into a single string and save it to a variable, you can do that with the *capture* tag. This tag is a block which "captures" whatever is rendered inside it and assigns it to the given variable instead of rendering it to the screen.
+If you want to combine a number of strings into a single string and save it to a variable, you can do that with the @capture@ tag.
+This tag is a block which "captures" whatever is rendered inside it,
+then assigns the captured value to the given variable instead of rendering it to the screen.
