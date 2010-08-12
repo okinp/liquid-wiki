@@ -113,7 +113,7 @@ Liquid allows you to write simple expressions in the @if@ or @unless@ (and optio
 # Same as above
 {% unless user.name == 'tobi' %}
   Hello non-tobi
-{% endif %}
+{% endunless %}
 
 # Check if the user has a credit card
 {% if user.creditcard != null %}
