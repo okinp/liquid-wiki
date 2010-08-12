@@ -5,8 +5,8 @@ A Liquid template is rendered in two steps: Parse and Render.
 For an overview of the Liquid syntax, please read [[Liquid for Designers]]. 
 
 <pre>
-  @template = Liquid::Template.parse("hi {{name}}")  # Parses and compiles the template
-  @template.render( 'name' => 'tobi' )               # Renders the output => "hi tobi" 
+@template = Liquid::Template.parse("hi {{name}}")  # Parses and compiles the template
+@template.render( 'name' => 'tobi' )               # Renders the output => "hi tobi" 
 </pre>
 
 The @parse@ step creates a fully compiled template which can be re-used as often as you like.
@@ -65,16 +65,16 @@ h3. Create your own tags
 To create a new tag, simply inherit from @Liquid::Tag@ and register your block with @Liquid::Template@.
 
 <pre>
-  class Random < Liquid::Tag                                             
-    def initialize(tag_name, max, tokens)
-       super 
-       @max = max.to_i
-    end
-
-    def render(context)
-      rand(@max).to_s 
-    end    
+class Random < Liquid::Tag                                             
+  def initialize(tag_name, max, tokens)
+     super 
+     @max = max.to_i
   end
+
+  def render(context)
+    rand(@max).to_s 
+  end    
+end
 
 Liquid::Template.register_tag('random', Random)
 </pre>
@@ -91,20 +91,20 @@ To create a new block,
 you just have to inherit from @Liquid::Block@ and register your block with @Liquid::Template@.
 
 <pre>
-  class Random < Liquid::Block                                             
-    def initialize(tag_name, markup, tokens)
-       super 
-       @rand = markup.to_i
-    end
-
-    def render(context)
-      if rand(@rand) == 0 
-         super
-      else
-         ''
-      end
-    end    
+class Random < Liquid::Block                                             
+  def initialize(tag_name, markup, tokens)
+     super 
+     @rand = markup.to_i
   end
+
+  def render(context)
+    if rand(@rand) == 0 
+       super
+    else
+       ''
+    end
+  end    
+end
 
 Liquid::Template.register_tag('random', Random)
 </pre>
