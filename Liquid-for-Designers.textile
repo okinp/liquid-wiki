@@ -116,12 +116,12 @@ Liquid allows you to write simple expressions in the @if@ (and optionally, @else
 {% endif %}
 
 # array = 1,2,3
-{% if array includes 2 %} 
+{% if array contains 2 %} 
    array includes 2
 {% endif %}
 
 # string = 'hello world' 
-{% if string includes 'hello' %} 
+{% if string contains 'hello' %} 
    string includes 'hello'
 {% endif %}
 </pre>
