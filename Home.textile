@@ -14,6 +14,7 @@ h2. Who uses liquid?
 
 * "Shopify":http://www.shopify.com
 * "Mephisto":http://mephistoblog.com/
+* "Chameleon":http://chameleon.wikidot.com/
 * ... add yours ... :-) 
 
 h2. Why should I use Liquid?
