@@ -61,8 +61,8 @@ We made 1 million dollars {% comment %} in losses {% endcomment %} this year
 
 h2. If / Else
 
-<code>if / else</code> should be well known from any language imaginable.
-Liquid allows you to write simple expressions in the <code>if</code> clause:
+<code>if / else</code> should be well known from any imaginable programming language.
+Liquid allows you to write simple expressions in the <code>if</code> (and optionally, <code>else</code>) clause:
 
 <pre><code>
 {% if user %}
@@ -119,7 +119,7 @@ Liquid allows you to write simple expressions in the <code>if</code> clause:
 
 h2. Case Statement
 
-If you need more than one condition you can use the Case Statement
+If you need more conditions, you can use the Case Statement:
 
 <pre><code>
 {% case condition %} 
@@ -149,7 +149,7 @@ hit 2 or 3
 h2. Cycle
 
 Often you have to alternate between different colors or similar tasks.
-Liquid has build in support for such operations using the cycle tag.
+Liquid has built-in support for such operations using the cycle tag.
 
 <pre><code>
 {% cycle 'one', 'two', 'three' %} 
@@ -165,11 +165,14 @@ three
 one
 </code></pre>
 
-If no name is supplied for the cycle group then its assumed that multiple calls with the same parameters are one group. 
+If no name is supplied for the cycle group,
+then it's assumed that multiple calls with the same parameters are one group. 
 
-If you want to have total control over cycle groups you can optionally specify the name of the group. This can even be a variable.
+If you want to have total control over cycle groups, you can optionally specify the name of the group.
+This can even be a variable.
 
 <pre><code>
+
 {% cycle 'group 1': 'one', 'two', 'three' %} 
 {% cycle 'group 1': 'one', 'two', 'three' %} 
 {% cycle 'group 2': 'one', 'two', 'three' %} 
@@ -185,7 +188,7 @@ two
 
 h2. For loops
 
-Liquid allows for loops over collections
+Liquid allows for loops over collections:
 
 <pre><code>
   {% for item in array %} 
@@ -193,7 +196,7 @@ Liquid allows for loops over collections
   {% endfor %} 
 </code></pre>
 
-During every for loop there are following helper variables available for extra styling needs:
+During every <code>for</code> loop, the following helper variables are available for extra styling needs:
 
 <pre><code>
  forloop.length      # => length of the entire for loop
@@ -207,7 +210,7 @@ During every for loop there are following helper variables available for extra s
 
 There are several attributes you can use to influence which items you receive in your loop
 
-*limit:int* lets you restrict how many items you get
+*limit:int* lets you restrict how many items you get.
 *offset:int* lets you start the collection with the nth item.
 
 <pre><code>
@@ -224,7 +227,8 @@ Reversing the loop
 {% for item in collection reversed %} {{item}} {% endfor %}
 </code></pre>
 
-Instead of looping over an existing collection, you can define a range of numbers to loop through. The range can be defined by both literal and variable numbers:
+Instead of looping over an existing collection, you can define a range of numbers to loop through.
+The range can be defined by both literal and variable numbers:
 
 <pre><code>
   # if item.quantity is 4...
@@ -236,7 +240,8 @@ Instead of looping over an existing collection, you can define a range of number
 
 h2. Variable Assignment
 
-You can store data in your own variables, to be used in output or other tags as desired. The simplest way to create a variable is with the *assign* tag, which has a pretty straightforward syntax:
+You can store data in your own variables, to be used in output or other tags as desired.
+The simplest way to create a variable is with the @assign@ tag, which has a pretty straightforward syntax:
 
 <pre><code>
 {% assign name = 'freestyle' %}
