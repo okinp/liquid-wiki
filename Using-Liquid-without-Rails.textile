@@ -7,7 +7,8 @@ The big secret, however, is creating a @to_liquid@ method for any classes you wa
 
 Let's say you have a Product class:
 
-<pre><code>class Product
+<pre>
+class Product
   attr_accessor :name, :price
 
   def initialize(name,price)
@@ -15,25 +16,28 @@ Let's say you have a Product class:
     @price = price
   end
 end
-</code></pre>
+</pre>
 
 And you have a chunk of text that you want to Liquidize by inserting some details about your products:
 
-<pre><code>sentence = "I'm running to the store with {{ product.price }} dollars in my pocket "
+<pre>
+sentence = "I'm running to the store with {{ product.price }} dollars in my pocket "
 sentence += "to buy a {{ product.name }}."
-</code></pre>
+</pre>
 
 And you create a product and parse the sentence:
 
-<pre><code>my_purchase = Product.new('box of sausages', 20)
+<pre>
+my_purchase = Product.new('box of sausages', 20)
 puts Liquid::Template.parse(sentence).render('product' => my_purchase)
-</code></pre>
+</pre>
 
 You excitedly execute your code, expecting to see your beautiful new sentence, but instead you get:
 
-<pre><code>I'm running to the store with Liquid error:
+<pre>
+I'm running to the store with Liquid error:
 undefined method `to_liquid' for #<Product:0x1388c08 ...
-</code></pre>
+</pre>
 
 @to_liquid@ ???
 Where did that come from?
@@ -42,7 +46,8 @@ Turns out you need to add a method to your class that returns your instance vari
 so you need to explicitly let Liquid know how to access everything in your object.)
 So, we update the @Product@ class description to include that method:
 
-<pre><code>class Product
+<pre>
+class Product
   attr_accessor :name, :price
 
   def initialize(name, price)
@@ -55,16 +60,18 @@ So, we update the @Product@ class description to include that method:
       "price" => self.price }
   end
 end
-</code></pre>
+</pre>
 
 Run that again and presto:
 
-<pre><code>I'm running to the store with 20 dollars in my pocket to buy a box of sausages.
-</code></pre>
+<pre>
+I'm running to the store with 20 dollars in my pocket to buy a box of sausages.
+</pre>
 
 However, that's a bit verbose, so you may want to use @liquid_methods@, instead:
 
-<pre><code>class Product
+<pre>
+class Product
   attr_accessor  :name, :price
   liquid_methods :name, :price
 
@@ -73,6 +80,6 @@ However, that's a bit verbose, so you may want to use @liquid_methods@, instead:
     @price = price
   end
 end
-</code></pre>
+</pre>
 
 (Thanks to "Tom's":http://github.com/mojombo "Jekyll":http://github.com/mojombo/jekyll/tree/master/lib/jekyll/post.rb#L122-128 code for helping me figuring this out.)
