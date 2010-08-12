@@ -26,12 +26,12 @@ The first parameter is always the output of the left side of the filter.
 The return value of the filter will be the new left value when the next filter is run.
 When there are no more filters, the template will receive the resulting string. 
 
-<pre><code>
+<pre>
 Hello {{ 'tobi' | upcase }}
 Hello tobi has {{ 'tobi' | length }} letters!
 Hello {{ '*tobi*' | textilize | upcase }}
 Hello {{ now | date: "%Y %h" }}
-</code></pre>
+</pre>
 
 h3. Standard Filters
 
@@ -60,16 +60,16 @@ h2. Comments
 Comment is the simplest tag.
 It just swallows content. 
 
-<pre><code>
+<pre>
 We made 1 million dollars {% comment %} in losses {% endcomment %} this year
-</code></pre>
+</pre>
 
 h2. If / Else
 
 @if / else@ should be well known from any imaginable programming language.
 Liquid allows you to write simple expressions in the @if@ (and optionally, @else@) clause:
 
-<pre><code>
+<pre>
 {% if user %}
   Hello {{ user.name }}
 {% endif %}
@@ -120,13 +120,13 @@ Liquid allows you to write simple expressions in the @if@ (and optionally, @else
 {% if string includes 'hello' %} 
    string includes 'hello'
 {% endif %}
-</code></pre>
+</pre>
 
 h2. Case Statement
 
 If you need more conditions, you can use the @case@ statement:
 
-<pre><code>
+<pre>
 {% case condition %} 
 {% when 1 %} 
 hit 1 
@@ -135,11 +135,11 @@ hit 2 or 3
 {% else %} 
 ... else ... 
 {% endcase %} 
-</code></pre>
+</pre>
 
 *Example:*
 
-<pre><code>
+<pre>
 {% case template %}
 	
 {% when 'label' %}
@@ -149,14 +149,14 @@ hit 2 or 3
 {% else %}
      // {{page_title}
 {% endcase %}
-</code></pre>
+</pre>
 
 h2. Cycle
 
 Often you have to alternate between different colors or similar tasks.
 Liquid has built-in support for such operations, using the @cycle@ tag.
 
-<pre><code>
+<pre>
 {% cycle 'one', 'two', 'three' %} 
 {% cycle 'one', 'two', 'three' %} 
 {% cycle 'one', 'two', 'three' %} 
@@ -168,7 +168,7 @@ one
 two
 three
 one
-</code></pre>
+</pre>
 
 If no name is supplied for the cycle group,
 then it's assumed that multiple calls with the same parameters are one group. 
@@ -177,8 +177,7 @@ If you want to have total control over cycle groups, you can optionally specify 
 This can even be a variable.
 
 
-<pre><code>
-
+<pre>
 {% cycle 'group 1': 'one', 'two', 'three' %} 
 {% cycle 'group 1': 'one', 'two', 'three' %} 
 {% cycle 'group 2': 'one', 'two', 'three' %} 
@@ -190,21 +189,21 @@ one
 two 
 one
 two
-</code></pre>
+</pre>
 
 h2. For loops
 
 Liquid allows @for@ loops over collections:
 
-<pre><code>
+<pre>
   {% for item in array %} 
     {{ item }}
   {% endfor %} 
-</code></pre>
+</pre>
 
 During every @for@ loop, the following helper variables are available for extra styling needs:
 
-<pre><code>
+<pre>
  forloop.length      # => length of the entire for loop
  forloop.index       # => index of the current iteration 
  forloop.index0	    # => index of the current iteration (zero based) 
@@ -212,55 +211,55 @@ During every @for@ loop, the following helper variables are available for extra 
  forloop.rindex0   # => how many items are still left? (zero based)
  forloop.first        # => is this the first iteration?
  forloop.last         # => is this the last iternation? 
-</code></pre>
+</pre>
 
 There are several attributes you can use to influence which items you receive in your loop
 
 *limit:int* lets you restrict how many items you get.
 *offset:int* lets you start the collection with the nth item.
 
-<pre><code>
+<pre>
   # array = [1,2,3,4,5,6]
   {% for item in array limit:2 offset:2 %} 
     {{ item }}
   {% endfor %} 
   # results in 3,4 
-</code></pre>
+</pre>
 
 Reversing the loop 
 
-<pre><code>
+<pre>
 {% for item in collection reversed %} {{item}} {% endfor %}
-</code></pre>
+</pre>
 
 Instead of looping over an existing collection, you can define a range of numbers to loop through.
 The range can be defined by both literal and variable numbers:
 
-<pre><code>
+<pre>
   # if item.quantity is 4...
   {% for i in (1..item.quantity) %}
     {{ i }}
   {% endfor %}
   # results in 1,2,3,4
-</code></pre>
+</pre>
 
 h2. Variable Assignment
 
 You can store data in your own variables, to be used in output or other tags as desired.
 The simplest way to create a variable is with the @assign@ tag, which has a pretty straightforward syntax:
 
-<pre><code>
+<pre>
 {% assign name = 'freestyle' %}
 
 {% for t in collections.tags %}{% if t == name %}
   <p>Freestyle!</p>
 {% endif %}{% endfor %}
 
-</code></pre>
+</pre>
 
 Another way of doing this would be to assign @true / false@ values to the variable:
 
-<pre><code>
+<pre>
 {% assign freestyle = false %}
 
 {% for t in collections.tags %}{% if t == 'freestyle' %}
@@ -270,8 +269,7 @@ Another way of doing this would be to assign @true / false@ values to the variab
 {% if freestyle %}
   <p>Freestyle!</p>
 {% endif %}
-
-</code></pre>
+</pre>
 
 If you want to combine a number of strings into a single string and save it to a variable, you can do that with the @capture@ tag.
 This tag is a block which "captures" whatever is rendered inside it,
