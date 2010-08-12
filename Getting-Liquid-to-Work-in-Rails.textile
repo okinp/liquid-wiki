@@ -2,7 +2,9 @@ h2. Using .liquid as a template handler in your views
 
 Liquid comes with a proper @init.rb@ file, by default.
 To start using Liquid, just extract it into @vendor/plugins@.
-Better yet, use the @./script/plugin@ script to install Liquid.
+Better yet, use the @./script/plugin@ script to install Liquid:
+
+pre. script/plugin install http://liquid-markup.googlecode.com/svn/trunk
 
 You can now start using templates with the @.liquid@ file type (ie, extension).
 
