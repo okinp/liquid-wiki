@@ -52,7 +52,7 @@ h3. Standard Filters
 * **truncatewords** - undocumented
 * **upcase** - convert a input string to UPCASE
 * **minus** - subtracts two numbers 
-* **plus** - add to numbers
+* **plus** - add two numbers
 * **times** - multiply two numbers
 * **divided_by** - divide two numbers
 
