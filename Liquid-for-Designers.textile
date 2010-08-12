@@ -196,21 +196,21 @@ h2. For loops
 Liquid allows @for@ loops over collections:
 
 <pre>
-  {% for item in array %} 
-    {{ item }}
-  {% endfor %} 
+{% for item in array %} 
+  {{ item }}
+{% endfor %} 
 </pre>
 
 During every @for@ loop, the following helper variables are available for extra styling needs:
 
 <pre>
- forloop.length      # => length of the entire for loop
- forloop.index       # => index of the current iteration 
- forloop.index0	    # => index of the current iteration (zero based) 
- forloop.rindex     # => how many items are still left?
- forloop.rindex0   # => how many items are still left? (zero based)
- forloop.first        # => is this the first iteration?
- forloop.last         # => is this the last iternation? 
+forloop.length      # => length of the entire for loop
+forloop.index       # => index of the current iteration 
+forloop.index0	    # => index of the current iteration (zero based) 
+forloop.rindex      # => how many items are still left?
+forloop.rindex0     # => how many items are still left? (zero based)
+forloop.first       # => is this the first iteration?
+forloop.last        # => is this the last iternation? 
 </pre>
 
 There are several attributes you can use to influence which items you receive in your loop
@@ -219,11 +219,11 @@ There are several attributes you can use to influence which items you receive in
 *offset:int* lets you start the collection with the nth item.
 
 <pre>
-  # array = [1,2,3,4,5,6]
-  {% for item in array limit:2 offset:2 %} 
-    {{ item }}
-  {% endfor %} 
-  # results in 3,4 
+# array = [1,2,3,4,5,6]
+{% for item in array limit:2 offset:2 %} 
+  {{ item }}
+{% endfor %} 
+# results in 3,4 
 </pre>
 
 Reversing the loop 
@@ -236,11 +236,11 @@ Instead of looping over an existing collection, you can define a range of number
 The range can be defined by both literal and variable numbers:
 
 <pre>
-  # if item.quantity is 4...
-  {% for i in (1..item.quantity) %}
-    {{ i }}
-  {% endfor %}
-  # results in 1,2,3,4
+# if item.quantity is 4...
+{% for i in (1..item.quantity) %}
+  {{ i }}
+{% endfor %}
+# results in 1,2,3,4
 </pre>
 
 h2. Variable Assignment
