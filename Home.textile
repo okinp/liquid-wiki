@@ -1,1 +1,8 @@
 Welcome to the liquid wiki!
+
+It's nice to be at the Wiki ... but I was hoping for some kind of guide to help
+get Liquid into a Rails Application.
+
+I can't seem to find any docs anywhere ..
+
+Does anyone have a simple Quick Start Guide on how to get Liquid going?
