@@ -5,6 +5,24 @@ Liquid is a template engine which was crafted for very specific requirements
 * It has to be stateless. The compile and render steps have to be separate, so that the expensive parsing and compiling can be done once;  later on, you can just render it by passing in a hash with local variables and objects.
 * It needs to be able to style emails as well as HTML.
 
+h2. What does it look like?
+
+  source = %|
+  <ul id="products">
+    {% for product in products %}
+      <li>
+        <h2>{{product.name}}</h2>
+        Only {{product.price | price }}
+
+        {{product.description | textile }}
+       </li>
+    {% endfor %}
+  </ul>|
+
+  @template = Liquid::Template.parse(source) 
+  @template.render( 'products' => Product.all ) 
+ 
+
 h2. Stuff to read, watch, etc.
 
 * [[Liquid for Programmers]] 
