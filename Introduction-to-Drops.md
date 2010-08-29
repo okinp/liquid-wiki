@@ -1,12 +1,12 @@
 # Liquid Drops
 
-Drops let you provide the user with custom functionality. They're very much like a standard Ruby class, but have all un-needed and potentialy dangerous methods removed. From the user's perspective a drop acts very much like a Hash, thought methods are accessed with dot-notation aswell as element selection. A drop method cannot be invoked with arguments. Drops are called just-in-time thus allowing you to lazily load objects.
+Drops let you provide the user with custom functionality. They are very much like a standard Ruby class, but have all unused and potentially dangerous methods removed. From the user's perspective a drop acts very much like a Hash, though methods are accessed with dot-notation as well as element selection. A drop method cannot be invoked with arguments. Drops are called just-in-time, thus allowing you to lazily load objects.
 
 ## Standard drop methods:
 
 before_method(method):
 
-Called once for every invokation, even if the destination method doesn't exist. Can be used to provide dynamically named methods.
+Called once for every invocation, even if the destination method doesn't exist. Can be used to provide dynamically named methods.
 
 Example:
 
@@ -44,15 +44,15 @@ Returns the drop instance.
       end
 
       def name
-        @product[:name]
+        @product["name"]
       end
 
       def description
-        @product[:description]
+        @product["description"]
       end
 
       def price
-        @product[:price]
+        @product["price"]
       end
 
     end
