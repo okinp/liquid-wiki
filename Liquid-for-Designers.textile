@@ -36,7 +36,7 @@ When there are no more filters, the template will receive the resulting string.
 Hello {{ 'tobi' | upcase }}
 Hello tobi has {{ 'tobi' | length }} letters!
 Hello {{ '*tobi*' | textilize | upcase }}
-Hello {{ now | date: "%Y %h" }}
+Hello {{ 'now' | date: "%Y %h" }}
 </pre>
 
 h3. Standard Filters
