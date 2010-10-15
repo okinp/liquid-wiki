@@ -30,6 +30,7 @@ h2. Who uses Liquid?
 * "3scale (API Management System)":http://www.3scale.net/
 * "Chaptercore":http://www.chaptercore.com
 * "ScreenSteps Live":http://bluemangolearning.com/screenstepslive
+* "PokerAffiliateSolutions":http://www.pokeraffiliatesolutions.com/
 * ...Add yours :)
 
 h2. Why should I use Liquid?
