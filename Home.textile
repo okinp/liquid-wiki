@@ -32,6 +32,7 @@ h2. Who uses Liquid?
 * "ScreenSteps Live":http://bluemangolearning.com/screenstepslive
 * "PokerAffiliateSolutions":http://www.pokeraffiliatesolutions.com/
 * "Assistly":http://www.assistly.com
+* "Ronin":http://www.roninapp.com
 * ...Add yours :)
 
 h2. Why should I use Liquid?
