@@ -53,7 +53,6 @@ h3. Standard Filters
 * **size** - return the size of an array or string
 * **escape** - escape a string
 * **escape_once** - returns an escaped version of html without affecting existing escaped entities
-* **urlencode** encode string for use in a url
 * **strip_html** - strip html from string
 * **strip_newlines** - strip all newlines (\n) from string
 * **newline_to_br** - replace each newline (\n) with html break
