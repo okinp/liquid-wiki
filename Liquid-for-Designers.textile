@@ -185,7 +185,7 @@ hit 2 or 3
 {% when 'product' %}
      // {{ product.vendor | link_to_vendor }} / {{ product.title }}
 {% else %}
-     // {{page_title}
+     // {{page_title}}
 {% endcase %}
 </pre>
 
