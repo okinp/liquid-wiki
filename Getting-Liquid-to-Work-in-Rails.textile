@@ -10,12 +10,14 @@ A note about helpers. The liquid rails plugin tries to use your helpers as Filte
 
 Helper:
 
-   module ApplicationHelper
-       def truncate(input, length)
-           input[0..length] + '...' 
-       end
-   end
+<pre><code>module ApplicationHelper
+  def truncate(input, length)
+    input[0..length] + '...' 
+  end
+end
+</code></pre>
 
 Liquid:
-  
-  {{ 'This is a long section of text' | truncate: 3 }} #=>   Thi... 
+
+<pre><code>    {{ 'This is a long section of text' | truncate: 3 }} #=>   Thi... 
+</code></pre>
