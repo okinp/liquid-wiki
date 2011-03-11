@@ -34,6 +34,7 @@ h2. Who uses Liquid?
 * "Ronin":http://www.roninapp.com
 * "CrowdVine":http://www.crowdvine.com
 * "AboutOne":http://www.aboutone.com
+* "RightScale":http://support.rightscale.com/15-References/Liquid_Markup_with_RightScale_Widgets
 * ...Add yours :)
 
 h2. Why should I use Liquid?
