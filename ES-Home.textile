@@ -8,7 +8,7 @@ Liquid es un motor de templates que fue creado con requerimientos bien específi
 h2. Cosas a leer, mirar, etc.
 
 * [[ES-Liquid para Programadores]] 
-* [[ES-Liquid para Disenadores]] 
+* [[ES-Liquid para Diseñadores]] 
 * [[ES-Usando Liquid sin Rails]]
 
 * "Liquid":http://railscasts.com/episodes/118-liquid (screencast en Inglés)
