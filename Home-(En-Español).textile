@@ -5,7 +5,6 @@ Liquid es un motor de templates que fue creado con requerimientos bien específi
 * Debe ser stateless (No debe guardar estado). Los pasos de compilación y renderización deben quedar separados, para que el (costoso) parseo y la compilación se haga solo una vez. Luego, puedes renderizar HTML con solo pasar un hash con variables locales y objetos. 
 * Debe ser posible darle estilo tanto a Emails como a HTML. 
  
-
 h2. Cosas a leer, mirar, etc.
 
 * [[ES-Liquid para Programadores]] 
