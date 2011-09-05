@@ -1,20 +1,20 @@
-There are two types of markup in Liquid: Output and Tag. 
+Hay dos tipos de tags en Liquid: De Texto y Lógicos. 
 
-* Output markup (which may resolve to text) is surrounded by
-
-<pre>
-{{ matched pairs of curly brackets (ie, braces) }}
-</pre>
-
-* Tag markup (which cannot resolve to text) is surrounded by
+* Tags de texto (que pueden devolver texto) están envueltos por
 
 <pre>
-{% matched pairs of curly brackets and percent signs %}
+{{ llaves dobles de apertura y cierre (se ven así) }}
 </pre>
 
-h1. Output
+* Tags lógicos (que nunca devuelven texto) están envueltos por
 
-Here is a simple example of Output:
+<pre>
+{% llave y porcentaje de apertura y cierre (se ven así) %}
+</pre>
+
+h1. Tags de Texto
+
+Aquí hay un ejemplo simple de salida:
 
 <pre>
 Hello {{name}}          
@@ -24,176 +24,175 @@ Hello {{ 'tobi' }}
 
 <a name="filters"></a>
 
-h2. Advanced output: Filters
+h2. Salida de Texto Avanzada: Filtros
 
-Output markup takes filters.
-Filters are simple methods.
-The first parameter is always the output of the left side of the filter.
-The return value of the filter will be the new left value when the next filter is run.
-When there are no more filters, the template will receive the resulting string. 
+Los tags de texto pueden tomar filtros. 
+Los filtros son métodos simples.
+El primer parámetro que recibe el filtro es el texto o variable que se encuentra a la izquierda del filtro.
+En caso de ver más de un filtro, lo que produzca el filtro más a la izquierda será el parámetro de entrada al filtro siguiente a la derecha.
+Cuando no haya más filtros, el template va a recibir el texto del último filtro aplicado.  
 
 <pre>
-Hello {{ 'tobi' | upcase }}
-Hello tobi has {{ 'tobi' | size }} letters!
-Hello {{ '*tobi*' | textilize | upcase }}
-Hello {{ 'now' | date: "%Y %h" }}
+Hola {{ 'tobi' | upcase }}
+Hola tobi tiene {{ 'tobi' | size }} letras!
+Hola {{ '*tobi*' | textilize | upcase }}
+Hola {{ 'now' | date: "%Y %h" }}
 </pre>
 
-h3. Standard Filters
+h3. Filtros Estándar
 
-* **date** - reformat a date ("syntax reference":http://liquid.rubyforge.org/classes/Liquid/StandardFilters.html#M000012)
-* **capitalize** - capitalize words in the input sentence
-* **downcase** - convert an input string to lowercase
-* **upcase** - convert an input string to uppercase
-* **first** - get the first element of the passed in array
-* **last** - get the last element of the passed in array
-* **join** - join elements of the array with certain character between them
-* **sort** - sort elements of the array
-* **map** - map/collect an array on a given property
-* **size** - return the size of an array or string
-* **escape** - escape a string
-* **escape_once** - returns an escaped version of html without affecting existing escaped entities
-* **strip_html** - strip html from string
-* **strip_newlines** - strip all newlines (\n) from string
-* **newline_to_br** - replace each newline (\n) with html break
-* **replace** - replace each occurrence **e.g.** {{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'
-* **replace_first** - replace the first occurrence **e.g.** {{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'
-* **remove** - remove each occurrence **e.g.** {{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'
-* **remove_first** - remove the first occurrence **e.g.** {{ 'barbar' | remove_first:'bar' }} #=> 'bar'
-* **truncate** - truncate a string down to x characters
-* **truncatewords** - truncate a string down to x words
-* **prepend** - prepend a string **e.g.** {{ 'bar' | prepend:'foo' }} #=> 'foobar'
-* **append** - append a string **e.g.** {{ 'foo' | append:'bar' }} #=> 'foobar'
-* **minus** - subtraction **e.g**  {{ 4 | minus:2 }} #=> 2
-* **plus** - addition **e.g**  {{ '1' | plus:'1' }} #=> '11', {{ 1 | plus:1 }} #=> 2
-* **times** - multiplication  **e.g** {{ 5 | times:4 }} #=> 20
-* **divided_by** - division **e.g** {{ 10 | divided_by:2 }} #=> 5
-* **split** - split a string on a matching pattern **e.g.** {{ "a~b" | split:~ }} #=> ['a','b']
+* **date** - le dá formato a una fecha ("syntax reference":http://liquid.rubyforge.org/classes/Liquid/StandardFilters.html#M000012)
+* **capitalize** - Pone en mayúscula la primera letra del parámtro de entrada
+* **downcase** - Convierte todo el parámetro de entrada a minúsculas
+* **upcase** - Convierte todo el parámetro de entrada a mayúsculas
+* **first** - Devuelve el primer elemento de un parámetro de tipo array
+* **last** - Devuelve el último elemento de un parámetro de tipo array
+* **join** - Concatenar los elementos de un array con cierto caracter entre ellos
+* **sort** - Ordenar los elementos del array
+* **map** - Devuelve un array con la propiedad de los miembros de otro array
+* **size** - Devuelve el tamaño de un array o string (cadena de caracteres)
+* **escape** - Escapea un string
+* **escape_once** - Devuelve una versión escapeada en html sin afectar entidades ya escapeadas
+* **strip_html** - Saca todo html del string
+* **strip_newlines** - Saca todos los 'enters' (\n) de un string
+* **newline_to_br** - Reemplaca todos los 'enters' (\n) con un HTML br
+* **replace** - Reemplaza ocurrencias de cierto string **por ejemplo** {{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'
+* **replace_first** - Reemplaza la primer ocurrencia de un string **por ejemplo** {{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'
+* **remove** - Remueve de un string toda ocurrencia de otro string **por ejemplo** {{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'
+* **remove_first** - Remueve de un string la primera ocurrencia de otro string **por ejemplo** {{ 'barbar' | remove_first:'bar' }} #=> 'bar'
+* **truncate** - Trunca un string de los X caracteres deseados
+* **truncatewords** - Trunca un string de las X palabras deseadas 
+* **prepend** - Concatena un string al principio de otro string **por ejemplo** {{ 'bar' | prepend:'foo' }} #=> 'foobar'
+* **append** - Concatena un string al final de otro string **por ejemplo** {{ 'foo' | append:'bar' }} #=> 'foobar'
+* **minus** - Resta un número de otro **por ejemplo**  {{ 4 | minus:2 }} #=> 2
+* **plus** - Suma un número a otro **por ejemplo**  {{ '1' | plus:'1' }} #=> '11', {{ 1 | plus:1 }} #=> 2
+* **times** - Multiplica un número por otro  **por ejemplo** {{ 5 | times:4 }} #=> 20
+* **divided_by** - Divide un número por otro **por ejemplo** {{ 10 | divided_by:2 }} #=> 5
+* **split** - Divide un string utilizando un patrón parámetro **por ejemplo** {{ "a~b" | split:~ }} #=> ['a','b']
 
-h1. Tags
+h1. Tags Lógicos
 
-Tags are used for the logic in your template.
-New tags are very easy to code, so I hope to get many contributions to the standard tag library after releasing this code.
+Se utilizan para la lógica dentro de tu template.
+Es muy fácil desarrollar nuevos tags, así que esperamos recibir nuevas contribuciones a esta librería. 
 
-Here is a list of currently supported tags:
+Aquí hay una lista de tags: 
 
-* **assign** - Assgins some value to a variable
-* **capture** - Block tag that captures text into a variable
-* **case** - Block tag, its the standard case...when block
-* **comment** - Block tag, comments out the text in the block
-* **cycle** - Cycle is usually used within a loop to alternate between values, like colors or DOM classes.
-* **for** - For loop
-* **if** - Standard if/else block
-* **include** - Includes another template, useful for partials
-* **unless** - Mirror of if statement
+* **assign** - Assigna un valor a una variable
+* **capture** - Captura texto dentro del bloque y lo guarda en una variable
+* **case** - Se utiliza para hacer comparaciones con valores específico (bloque case...when)
+* **comment** - Block tag, comenta el texto dentro del bloque
+* **cycle** - Se utiliza para ciclar entre valores, por ejemplo colores o clases DOM.
+* **for** - Para ciclos tipo for
+* **if** - Para bloques if/else estándar
+* **include** - Incluye otro template, útil para templates parciales
+* **unless** - Idéntico al if
 
-h2. Comments
+h2. Comentarios
 
-Comment is the simplest tag.
-It just swallows content. 
+Comment es el tag más simple.
+Solamente oculta el contenido que encierra. 
 
 <pre>
-We made 1 million dollars {% comment %} in losses {% endcomment %} this year
+Generamos 1 millón de dólares {% comment %} en pérdidas {% endcomment %} este año
 </pre>
 
 h2. If / Else
 
-@if / else@ should be well known from any imaginable programming language.
-Liquid allows you to write simple expressions in the @if@ or @unless@ (and optionally, @elsif@ and @else@) clause:
+@if / else@ funciona como en cualquier lenguaje de programación.
+Liquid te permite escribir expresiones simples en las clausulas del @if@ o @unless@ (y opcionalmente, @elsif@ y @else@):
 
 <pre>
 {% if user %}
-  Hello {{ user.name }}
+  Hola {{ user.name }}
 {% endif %}
 
 {% if user.name == 'tobi' %}
-  Hello tobi
+  Hola tobi
 {% elsif user.name == 'bob' %}
-  Hello bob
+  Hola bob
 {% endif %}
 
 {% if user.name == 'tobi' or user.name == 'bob' %}
-  Hello tobi or bob
+  Hola tobi o bob
 {% endif %}
 
 {% if user.name == 'bob' and user.age > 45 %}
-  Hello old bob 
+  Hola viejo bob  
 {% endif %}
 
 {% if user.name != 'tobi' %} 
-  Hello non-tobi
+  Hola non-tobi
 {% endif %}
 
-# Same as above
+# Es la misma clausula que la de arriba
 {% unless user.name == 'tobi' %}
-  Hello non-tobi
+  Hola non-tobi
 {% endunless %}
 
-# Check if the user has a credit card
+# Fijarse si el user tiene creditcard
 {% if user.creditcard != null %}
-   poor sob
+   Pobre
 {% endif %}
 
-# Same as above 
+# Igual que arriba
 {% if user.creditcard %}
-   poor sob
+   Pobre
 {% endif %}
 
-# Check for an empty array
+# Chequear por un array vacío
 {% if user.payments == empty %}
-   you never paid ! 
+   No pagaste todavía!
 {% endif %}
 
 {% if user.age > 18 %}
-   Login here
+   Login aquí
 {% else %}
-   Sorry, you are too young
+   Perdón, eres muy joven. 
 {% endif %}
 
 # array = 1,2,3
 {% if array contains 2 %} 
-   array includes 2
+   el array incluye 2
 {% endif %}
 
-# string = 'hello world' 
-{% if string contains 'hello' %} 
-   string includes 'hello'
+# string = 'hola mundo' 
+{% if string contains 'hola' %} 
+   string incluye 'hello'
 {% endif %}
 </pre>
 
-h2. Case Statement
+h2. Tag Case
 
-If you need more conditions, you can use the @case@ statement:
+Si necesita más condiciones, puede usar el tag @case@:
 
 <pre>
 {% case condition %} 
-{% when 1 %} 
-hit 1 
-{% when 2 or 3 %} 
-hit 2 or 3
-{% else %} 
-... else ... 
+  {% when 1 %} 
+  condition es 1
+  {% when 2 or 3 %} 
+  condition es 2 o 3
+  {% else %} 
+  condition no es ni 1, ni 2, ni 3
 {% endcase %} 
 </pre>
 
-*Example:*
+*Ejemplo:*
 
 <pre>
 {% case template %}
-
-{% when 'label' %}
-     // {{ label.title }}
-{% when 'product' %}
-     // {{ product.vendor | link_to_vendor }} / {{ product.title }}
-{% else %}
-     // {{page_title}}
+  {% when 'label' %}
+       // {{ label.title }}
+  {% when 'product' %}
+       // {{ product.vendor | link_to_vendor }} / {{ product.title }}
+  {% else %}
+       // {{page_title}}
 {% endcase %}
 </pre>
 
-h2. Cycle
+h2. Tag Cycle
 
-Often you have to alternate between different colors or similar tasks.
-Liquid has built-in support for such operations, using the @cycle@ tag.
+Frecuentemente uno debe alternar entre colores diferentes o tareas similares.
+Liquid tiene soporte para ese tipo de operaciones, utilizando el tag @cycle@.
 
 <pre>
 {% cycle 'one', 'two', 'three' %} 
@@ -201,7 +200,7 @@ Liquid has built-in support for such operations, using the @cycle@ tag.
 {% cycle 'one', 'two', 'three' %} 
 {% cycle 'one', 'two', 'three' %} 
 
-will result in 
+va a producir: 
 
 one
 two
@@ -209,11 +208,11 @@ three
 one
 </pre>
 
-If no name is supplied for the cycle group,
-then it's assumed that multiple calls with the same parameters are one group. 
+Si no se provee ningún nombre para el grupo del ciclo,
+entonces se asume que múltiples llamadas con los mismos parámetros son un grupo. 
 
-If you want to have total control over cycle groups, you can optionally specify the name of the group.
-This can even be a variable.
+Si quiere tener control total sobre los grupos del ciclo, opcionalmente puede especificar el nombre del grupo. 
+Esto puede ser una variable.
 
 
 <pre>
@@ -222,7 +221,7 @@ This can even be a variable.
 {% cycle 'group 2': 'one', 'two', 'three' %} 
 {% cycle 'group 2': 'one', 'two', 'three' %} 
 
-will result in 
+va a producir: 
 
 one
 two 
@@ -230,9 +229,9 @@ one
 two
 </pre>
 
-h2. For loops
+h2. Ciclos For
 
-Liquid allows @for@ loops over collections:
+Liquid te permite iterar sobre collecciones con un tag @for@: 
 
 <pre>
 {% for item in array %} 
@@ -240,22 +239,22 @@ Liquid allows @for@ loops over collections:
 {% endfor %} 
 </pre>
 
-During every @for@ loop, the following helper variables are available for extra styling needs:
+En cada iteración del ciclo @for@, puede usar alguna de las siguientes variables para sus necesidades de styling:
 
 <pre>
-forloop.length      # => length of the entire for loop
-forloop.index       # => index of the current iteration 
-forloop.index0      # => index of the current iteration (zero based) 
-forloop.rindex      # => how many items are still left?
-forloop.rindex0     # => how many items are still left? (zero based)
-forloop.first       # => is this the first iteration?
-forloop.last        # => is this the last iternation? 
+forloop.length      # => largo de todo el for
+forloop.index       # => índice de la iteración actual (empieza en 1)
+forloop.index0      # => índice de la iteración actual (empieza en 0) 
+forloop.rindex      # => cuántos items falta iterar? (empieza en 1)
+forloop.rindex0     # => cuántos items falta iterar? (empieza en 0)
+forloop.first       # => es esta la primera iteración?
+forloop.last        # => es esta la última iteración? 
 </pre>
 
-There are several attributes you can use to influence which items you receive in your loop
+Hay muchos atributos que puedes usar para influenciar a los items que usas para iterar en tu ciclo. 
 
-*limit:int* lets you restrict how many items you get.
-*offset:int* lets you start the collection with the nth item.
+*limit:int* te permite la cantidad de items que recibes para iterar.
+*offset:int* te permite empezar en la posicion N de la collección.
 
 <pre>
 # array = [1,2,3,4,5,6]
@@ -265,14 +264,14 @@ There are several attributes you can use to influence which items you receive in
 # results in 3,4 
 </pre>
 
-Reversing the loop 
+Iterando el ciclo en forma inversa
 
 <pre>
 {% for item in collection reversed %} {{item}} {% endfor %}
 </pre>
 
-Instead of looping over an existing collection, you can define a range of numbers to loop through.
-The range can be defined by both literal and variable numbers:
+En vez de iterar sobre una collección existente, puedes definir un rango de numbers para iterarlo.
+El rango se puede definir por literales o números variables:
 
 <pre>
 # if item.quantity is 4...
@@ -282,10 +281,10 @@ The range can be defined by both literal and variable numbers:
 # results in 1,2,3,4
 </pre>
 
-h2. Variable Assignment
+h2. Asignación de Variables
 
-You can store data in your own variables, to be used in output or other tags as desired.
-The simplest way to create a variable is with the @assign@ tag, which has a pretty straightforward syntax:
+Puedes guardar datos en tus propias variables, para ser usadas en otros tags de texto o lógica como necesites.
+La forma más simple de crear una variable es con un tag @assign@, que tiene una sintáxis bien directa:
 
 <pre>
 {% assign name = 'freestyle' %}
@@ -295,7 +294,7 @@ The simplest way to create a variable is with the @assign@ tag, which has a pret
 {% endif %}{% endfor %}
 </pre>
 
-Another way of doing this would be to assign @true / false@ values to the variable:
+Otra forma de hacer esto sería asignando los valores @true / false@ a una variable:
 
 <pre>
 {% assign freestyle = false %}
@@ -309,7 +308,8 @@ Another way of doing this would be to assign @true / false@ values to the variab
 {% endif %}
 </pre>
 
-If you want to combine a number of strings into a single string and save it to a variable, you can do that with the @capture@ tag. This tag is a block which "captures" whatever is rendered inside it, then assigns the captured value to the given variable instead of rendering it to the screen.
+Si quieres combinar muchos strings en un solo string y luego guardarlo en una variable, puedes usar el tag @capture@. 
+Este tag es un bloque que "captura" todo lo que tenga adentro, luego lo asigna a una variable en vez de mostrarlo por pantalla.
 
 <pre>
   {% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}
