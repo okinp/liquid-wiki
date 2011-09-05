@@ -1,0 +1,115 @@
+h2. Primeros Pasos
+
+Es muy fácil empezar con Liquid.
+Un template Liquid se renderiza en dos pasos: Parseo y renderización. 
+Para una introducción a la sintáxis de Liquid, por favor lee: [[ES-Liquid para Diseñadores]]. 
+
+<pre>
+@template = Liquid::Template.parse("hi {{name}}")  # Parsea y compila el template
+@template.render( 'name' => 'tobi' )               # Renderiza el texto => "hi tobi" 
+</pre>
+
+El paso de @parseo@ crea un template totalmente compilado que puede ser re-usado tantas veces como uno quiera.
+Se puede guardar en memoria o en una caché para renderizar con velocidad más adelante. 
+
+Todos los parámetros que quieras utilizar en el template Liquid deberán ser pasados como parámetros en el método @render@.
+Liquid no sabe de tus variables locales, de instancia o globales.
+
+h2. Extendiendo Liquid
+
+Es muy fácil extender Liquid.
+Sin embargo, ten en cuenta que Liquid es una librería joven que requiere ayuda de todos.
+Si creas filtros y tags útiles, por favor considera crear un patch y mandarlo como un issue aquí.
+
+h3. Crea tus propios filtros
+
+Es muy fácil crear filtros.
+Básicamente, son métodos que toman solo un parámtro y devuelven un string modificado.
+Puedes usar tus propios filtros, pasando un array de módulos así:
+<code>@template.render(assigns, [MyTextFilters, MyDateFilters])</code>.
+
+<pre>
+module TextFilter
+  def textilize(input)
+    RedCloth.new(input).to_html
+  end
+end
+</pre>
+
+<pre>
+@template = Liquid::Template.parse(" {{ '*hi*' | textilize }} ")
+@template.render({}, :filters => [TextFilter])              # => "<b>hi</b>" 
+</pre>
+
+Alternativamente, también puedes registrar tus filtros globalmente:
+
+<pre>
+module TextFilter
+  def textilize(input)
+    RedCloth.new(input).to_html
+  end
+end
+
+Liquid::Template.register_filter(TextFilter)
+</pre>
+
+Una vez que el filtro está registrado globalmente, uno puede simplemente usarlo así:
+
+<pre>
+@template = Liquid::Template.parse(" {{ '*hi*' | textilize }} ")
+@template.render              # => "<b>hi</b>" 
+</pre>
+
+h3. Crea tus propios tags
+
+Para crear un nuevo tag, simplemente debes heredar de @Liquid::Tag@ y registrar tu block en @Liquid::Template@.
+
+<pre>
+class Random < Liquid::Tag                                             
+  def initialize(tag_name, max, tokens)
+     super 
+     @max = max.to_i
+  end
+
+  def render(context)
+    rand(@max).to_s 
+  end    
+end
+
+Liquid::Template.register_tag('random', Random)
+</pre>
+
+<pre>
+@template = Liquid::Template.parse(" {% random 5 %}")
+@template.render    # => "3"
+</pre>
+
+h3. Crea tus propios block tags
+
+Todos los block tags son parseados por Liquid.
+Para crear un nuevo bloque, solo debes heredar de @Liquid::Block@ y registrar tu bloque en @Liquid::Template@.
+
+<pre>
+class Random < Liquid::Block                                             
+  def initialize(tag_name, markup, tokens)
+     super 
+     @rand = markup.to_i
+  end
+
+  def render(context)
+    if rand(@rand) == 0 
+       super
+    else
+       ''
+    end
+  end    
+end
+
+Liquid::Template.register_tag('random', Random)
+</pre>
+
+<pre>
+text = " {% random 5 %} wanna hear a joke? {% endrandom %} "
+@template = Liquid::Template.parse(text)
+@template.render  # => In 20% of the cases, this will output "wanna hear a joke?"
+</pre>
