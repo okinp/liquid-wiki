@@ -8,6 +8,7 @@ Liquid is a template engine which was crafted for very specific requirements
 
 h2. Stuff to read, watch, etc.
 
+* "Class reference":http://rubydoc.info/gems/liquid
 * [[Liquid for Programmers]] 
 * [[Liquid for Designers]] 
 * [[Using Liquid without Rails]]
