@@ -41,6 +41,7 @@ h2. Who uses Liquid?
 * "Rusic":http://rusic.com/
 * "Development Seed":http://developmentseed.org/blog/2011/09/09/jekyll-github-pages/
 * "peerTransfer":http://peertransfer.com
+* "NationBuilder":http://nationbuilder.com/
 * ...Add yours :)
 
 h2. Why should I use Liquid?
