@@ -17,7 +17,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [[Liquid for Designers]]
 * [[Using Liquid without Rails]]
 
-* [Liquid](http://railscasts.com/episodes/118-liquid (screencast))
+* [Liquid screencast](http://railscasts.com/episodes/118-liquid)
 
 ## Who uses Liquid?
 
