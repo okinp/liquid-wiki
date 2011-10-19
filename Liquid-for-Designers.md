@@ -77,7 +77,7 @@ this code.
 
 Here is a list of currently supported tags:
 
-* **assign** - Assgins some value to a variable
+* **assign** - Assigns some value to a variable
 * **capture** - Block tag that captures text into a variable
 * **case** - Block tag, its the standard case...when block
 * **comment** - Block tag, comments out the text in the block
