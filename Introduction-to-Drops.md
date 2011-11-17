@@ -59,7 +59,10 @@ Returns the drop instance.
 
 ### Controller 
 
-    template = Liquid::Template.parse( File.read( product_view.liquid ) ) template.render( { :product => ProductDrop.new(@product) } )
+    file = File.read(product_view.liquid)
+    template = Liquid::Template.parse(file)
+    drop = ProductDrop.new(@product)
+    template.render('product' => drop)
 
 ### View
 
