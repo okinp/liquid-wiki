@@ -48,6 +48,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [NationBuilder](http://nationbuilder.com/)
 * [Vendder](http://vendder.com/)
 * [tradelr](http://www.tradelr.com)
+* [Avenue](http://www.prontoavenue.biz)
 * ...Add yours :)
 
 ## Why should I use Liquid?
