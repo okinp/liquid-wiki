@@ -1,7 +1,2 @@
-### JavaScript
-
-https://github.com/darthapo/liquid.js
-
-### C#
-
-http://dotliquidmarkup.org/
+* [liquid.js](https://github.com/darthapo/liquid.js) (JavaScript)
+* [DotLiquid](http://dotliquidmarkup.org/) (C#)
