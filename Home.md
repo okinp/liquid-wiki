@@ -19,6 +19,8 @@ Liquid is a template engine which was crafted for very specific requirements
 
 * [Liquid screencast](http://railscasts.com/episodes/118-liquid)
 
+* [[Ports of Liquid to other environments]]
+
 ## Who uses Liquid?
 
 * [Shopify](http://www.shopify.com)
