@@ -52,6 +52,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [tradelr](http://www.tradelr.com)
 * [Avenue](http://www.prontoavenue.biz)
 * [Device Magic](http://www.devicemagic.com)
+* [Spiceworks](http://www.spiceworks.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
