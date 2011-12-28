@@ -54,6 +54,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Device Magic](http://www.devicemagic.com)
 * [Spiceworks](http://www.spiceworks.com)
 * [Puffer](https://github.com/puffer/puffer/)
+* [Displet](http://displet.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
