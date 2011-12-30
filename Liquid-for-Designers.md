@@ -249,7 +249,7 @@ forloop.index0      # => index of the current iteration (zero based)
 forloop.rindex      # => how many items are still left?
 forloop.rindex0     # => how many items are still left? (zero based)
 forloop.first       # => is this the first iteration?
-forloop.last        # => is this the last iternation?
+forloop.last        # => is this the last iteration?
 ```
 
 There are several attributes you can use to influence which items you receive in
