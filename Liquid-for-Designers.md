@@ -84,7 +84,8 @@ Here is a list of currently supported tags:
 * **cycle** - Cycle is usually used within a loop to alternate between values, like colors or DOM classes.
 * **for** - For loop
 * **if** - Standard if/else block
-* **include** - Includes another template, useful for partials
+* **include** - Includes another template; useful for partials
+* **raw** - temporarily disable tag processing to avoid syntax conflicts.
 * **unless** - Mirror of if statement
 
 ### Comments
@@ -93,6 +94,17 @@ Comment is the simplest tag.  It just swallows content.
 
 ```liquid
 We made 1 million dollars {% comment %} in losses {% endcomment %} this year
+```
+
+### Raw
+
+Raw temporarily disables tag processing.
+This is useful for generating content (eg, Mustache, Handlebars) which uses conflicting syntax.
+
+```liquid
+{% raw %}
+  In Handlebars, {{ this }} will be HTML-escaped, but {{{ that }}} will not.
+{% endraw %}
 ```
 
 ### If / Else
