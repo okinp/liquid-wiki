@@ -57,6 +57,8 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Displet](http://displet.com)
 * [Paspartout](http://paspartout.com)
 * [TrackGrid](http://www.trackgrid.com)
+* [Jekyll](http://jekyllrb.com/)
+* [Octopress](http://octopress.org/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
