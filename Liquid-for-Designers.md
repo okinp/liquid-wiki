@@ -111,7 +111,7 @@ This is useful for generating content (eg, Mustache, Handlebars) which uses conf
 
 `if / else` should be well known from any imaginable programming language.
 Liquid allows you to write simple expressions in the `if` or `unless` (and
-optionally, `elsif` and `else`) clause:
+optionally, `elseif` and `else`) clause:
 
 ```liquid
 {% if user %}
