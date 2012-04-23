@@ -109,7 +109,7 @@ This is useful for generating content (eg, Mustache, Handlebars) which uses conf
 
 ### If / Else
 
-`if / else` should be well known from any imaginable programming language.
+`if / else` should be well-known from any other programming language.
 Liquid allows you to write simple expressions in the `if` or `unless` (and
 optionally, `elseif` and `else`) clause:
 
