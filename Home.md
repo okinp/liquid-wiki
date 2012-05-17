@@ -26,6 +26,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Shopify](http://www.shopify.com)
 * [eLocal](http://www.elocal.com)
 * [Mephisto](http://mephistoblog.com/)
+* [Harmony](http://get.harmonyapp.com)
 * [Chameleon](http://chameleon.wikidot.com/)
 * [Cashboard](http://www.getcashboard.com)
 * [Edicy](http://www.edicy.com)
