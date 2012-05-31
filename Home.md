@@ -63,6 +63,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Octopress](http://octopress.org/)
 * [Vnda](http://www.vnda.com.br/)
 * [Xeemio](http://www.xeemio.com/)
+* [LeadFormance](http://www.leadformance.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
