@@ -64,6 +64,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Vnda](http://www.vnda.com.br/)
 * [Xeemio](http://www.xeemio.com/)
 * [LeadFormance](http://www.leadformance.com/)
+* [23 Video](http://www.23video.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
