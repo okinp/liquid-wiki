@@ -1,1 +1,0 @@
-There was some Chinese s**t. I changed it to english text that has same amount of usefullness: zero.
