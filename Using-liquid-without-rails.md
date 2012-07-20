@@ -1,3 +1,1 @@
-你好，
-
-   风消息一水韩 装饰一曲不服饭
+There was some Chinese s**t. I changed it to english text that has same amount of usefullness: zero.
