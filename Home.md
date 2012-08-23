@@ -33,7 +33,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Workory](http://www.workory.com)
 * [Zendesk](http://www.zendesk.com)
 * [SandwichBoard](http://www.sandwichboard.com/)
-* [YikeSite (CMS)](http://www.yikesite.com/)
+* [YikeSite (CMS)](http://api.yikesite.com/)
 * [Simplicant (Applicant Tracking System)](http://www.simplicant.com/)
 * [3scale (API Management System)](http://www.3scale.net/)
 * [Chaptercore](http://www.chaptercore.com)
