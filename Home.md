@@ -39,7 +39,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Chaptercore](http://www.chaptercore.com)
 * [ScreenSteps Live](http://bluemangolearning.com/screenstepslive)
 * [PokerAffiliateSolutions](http://www.pokeraffiliatesolutions.com/)
-* [Assistly](http://www.assistly.com)
+* [Desk.com](http://www.desk.com)
 * [Ronin](http://www.roninapp.com)
 * [CrowdVine](http://www.crowdvine.com)
 * [AboutOne](http://www.aboutone.com)
