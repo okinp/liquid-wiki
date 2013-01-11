@@ -68,6 +68,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Rackspace](http://www.rackspace.com/)
 * [Savory](http://www.savory.io/)
 * [Talent Technology](http://www.talenttech.com)
+* [WebKite](http://webkite.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
