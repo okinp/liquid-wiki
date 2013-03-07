@@ -70,6 +70,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Talent Technology](http://www.talenttech.com)
 * [WebKite](http://webkite.com/)
 * [Adam Ralph](http://adamralph.com/)
+* [Quaderno](http://getquaderno.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
