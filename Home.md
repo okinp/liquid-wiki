@@ -73,6 +73,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Quaderno](http://getquaderno.com/)
 * [LocomotiveCMS](http://locomotivecms.com/)
 * [Customer.io](http://customer.io)
+* [Mixture.io](http://mixture.io)
 * ...Add yours :)
 
 ## Why should I use Liquid?
