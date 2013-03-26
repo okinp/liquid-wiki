@@ -40,7 +40,7 @@ end
 
 ```ruby
 @template = Liquid::Template.parse(" {{ '*hi*' | textilize }} ")
-@template.render({}, :filters => [TextFilter])              # => "<b>hi</b>"
+@template.render({}, :filters => [TextFilter])              # => "<strong>hi</strong>"
 ```
 
 Alternatively, you can register your filters globally:
