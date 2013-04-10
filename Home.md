@@ -75,6 +75,8 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Customer.io](http://customer.io)
 * [Mixture.io](http://mixture.io)
 * [MakePlans](http://makeplans.net)
+* [Planning Center Services](http://get.planningcenteronline.com)
+* [Planning Center Resources](http://get.planningcenteronline.com/resources)
 * ...Add yours :)
 
 ## Why should I use Liquid?
