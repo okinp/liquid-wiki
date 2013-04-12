@@ -77,6 +77,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [MakePlans](http://makeplans.net)
 * [Planning Center Services](http://get.planningcenteronline.com)
 * [Planning Center Resources](http://get.planningcenteronline.com/resources)
+* [RoQua](http://www.roqua.nl)
 * ...Add yours :)
 
 ## Why should I use Liquid?
