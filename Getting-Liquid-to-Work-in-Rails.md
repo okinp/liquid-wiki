@@ -1,3 +1,5 @@
+**Question:** _Is this page valid any more?_
+
 Liquid comes with a proper init.rb by default.
 
 To start using liquid just extract it into vendor/plugins or better yet use the ./script/plugin script to install liquid.
