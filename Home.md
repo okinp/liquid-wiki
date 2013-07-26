@@ -78,6 +78,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [RoQua](http://www.roqua.nl)
 * [Evrone](http://www.evrone.com)
 * [Liquid.as](https://github.com/prevailhs/liquid.as)
+* [Open Liquid](https://github.com/23/openliquid)
 * ...Add yours :)
 
 ## Why should I use Liquid?
