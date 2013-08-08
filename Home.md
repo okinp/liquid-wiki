@@ -81,6 +81,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Open Liquid](https://github.com/23/openliquid)
 * [500px](http://portfolios.500px.com)
 * [VTEX](http://www.vtex.com.br/)
+* [Xorcode](http://www.xorcode.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
