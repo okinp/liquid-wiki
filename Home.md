@@ -82,6 +82,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [500px](http://portfolios.500px.com)
 * [VTEX](http://www.vtex.com.br/)
 * [Xorcode](http://www.xorcode.com/)
+* [MobiCheckin (registration forms)](http://www.mobicheckin.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
