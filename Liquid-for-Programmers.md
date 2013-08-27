@@ -21,7 +21,8 @@ global variables.
 
 Extending Liquid is very easy.  However, keep in mind that Liquid is a young
 library and requires some outside help.  If you create useful filters and tags,
-please consider creating a patch and attaching it to a ticket here on this trac.
+please consider making a [pull request](https://github.com/Shopify/liquid/pulls)
+with them.
 
 ### Create your own filters
 
