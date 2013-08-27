@@ -118,56 +118,78 @@ optionally, `elsif` and `else`) clause:
 {% if user %}
   Hello {{ user.name }}
 {% endif %}
+```
 
+```liquid
 {% if user.name == 'tobi' %}
   Hello tobi
 {% elsif user.name == 'bob' %}
   Hello bob
 {% endif %}
+```
 
+```liquid
 {% if user.name == 'tobi' or user.name == 'bob' %}
   Hello tobi or bob
 {% endif %}
+```
 
+```liquid
 {% if user.name == 'bob' and user.age > 45 %}
   Hello old bob
 {% endif %}
+```
 
+```liquid
 {% if user.name != 'tobi' %}
   Hello non-tobi
 {% endif %}
+```
 
+```liquid
 # Same as above
 {% unless user.name == 'tobi' %}
   Hello non-tobi
 {% endunless %}
+```
 
+```liquid
 # Check if the user has a credit card
 {% if user.creditcard != null %}
    poor sob
 {% endif %}
+```
 
+```liquid
 # Same as above
 {% if user.creditcard %}
    poor sob
 {% endif %}
+```
 
+```liquid
 # Check for an empty array
 {% if user.payments == empty %}
    you never paid !
 {% endif %}
+```
 
+```liquid
 {% if user.age > 18 %}
    Login here
 {% else %}
    Sorry, you are too young
 {% endif %}
+```
 
+```liquid
 # array = 1,2,3
 {% if array contains 2 %}
    array includes 2
 {% endif %}
+```
 
+```liquid
 # string = 'hello world'
 {% if string contains 'hello' %}
    string includes 'hello'
@@ -213,9 +235,11 @@ has built-in support for such operations, using the `cycle` tag.
 {% cycle 'one', 'two', 'three' %}
 {% cycle 'one', 'two', 'three' %}
 {% cycle 'one', 'two', 'three' %}
+```
 
 will result in
 
+```
 one
 two
 three
@@ -233,9 +257,11 @@ the name of the group.  This can even be a variable.
 {% cycle 'group 1': 'one', 'two', 'three' %}
 {% cycle 'group 2': 'one', 'two', 'three' %}
 {% cycle 'group 2': 'one', 'two', 'three' %}
+```
 
 will result in
 
+```
 one
 two
 one
