@@ -40,7 +40,7 @@ Hello {{ 'now' | date: "%Y %h" }}
 
 ### Standard Filters
 
-* `date` - reformat a date [syntax reference](http://liquid.rubyforge.org/classes/Liquid/StandardFilters.html#M000012)
+* `date` - reformat a date ([syntax reference](http://liquid.rubyforge.org/classes/Liquid/StandardFilters.html#M000012))
 * `capitalize` - capitalize words in the input sentence
 * `downcase` - convert an input string to lowercase
 * `upcase` - convert an input string to uppercase
