@@ -282,7 +282,7 @@ When iterating a hash, `item[0]` contains the key, and `item[1]` contains the va
 
 ```liquid
 {% for item in hash %}
-  {{ item[0] }}: {{item[1] }}
+  {{ item[0] }}: {{ item[1] }}
 {% endfor %}
 ```
 
