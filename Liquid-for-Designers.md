@@ -278,6 +278,14 @@ Liquid allows `for` loops over collections:
 {% endfor %}
 ```
 
+When iterating a hash, `item[0]` contains the key, and `item[1]` contains the value:
+
+```liquid
+{% for item in hash %}
+  {{ item[0] }}: {{item[1] }}
+{% endfor %}
+```
+
 During every `for` loop, the following helper variables are available for extra
 styling needs:
 
