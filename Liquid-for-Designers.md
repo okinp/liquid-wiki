@@ -168,10 +168,15 @@ optionally, `elsif` and `else`) clause:
 ```
 
 ```liquid
-# Check for an empty array
+# Check for the size of an array
 {% if user.payments == empty %}
    you never paid !
 {% endif %}
+
+{% if user.payments.size > 0  %}
+   you paid !
+{% endif %}
+
 ```
 
 ```liquid
