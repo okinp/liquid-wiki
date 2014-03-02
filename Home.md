@@ -87,6 +87,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [GiftFold](http://giftfold.com)
 * [Reamaze](http://www.reamaze.com)
 * [Sitebox.io](http://www.sitebox.io)
+* [Stunning](https://bestunning.net)
 * ...Add yours :)
 
 ## Why should I use Liquid?
