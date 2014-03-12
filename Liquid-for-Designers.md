@@ -67,7 +67,7 @@ Hello {{ 'now' | date: "%Y %h" }}
 * `plus` - addition *e.g.*  `{{ '1' | plus:'1' }} #=> '11'`, `{{ 1 | plus:1 }} #=> 2`
 * `times` - multiplication  *e.g* `{{ 5 | times:4 }} #=> 20`
 * `divided_by` - division *e.g.* `{{ 10 | divided_by:2 }} #=> 5`
-* `split` - split a string on a matching pattern *e.g.* `{{ "a~b" | split:'~' }} #=> ['a','b']`
+* `split` - split a string on a matching pattern *e.g.* `{{ "a~b" | split:"~" }} #=> ['a','b']`
 * `modulo` - remainder, *e.g.* `{{ 3 | modulo:2 }} #=> 1`
 
 ## Tags
