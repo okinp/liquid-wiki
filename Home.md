@@ -88,6 +88,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Reamaze](http://www.reamaze.com)
 * [Sitebox.io](http://www.sitebox.io)
 * [Stunning](https://bestunning.net)
+* [Vero (Email Marketing Software)](https://www.getvero.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
