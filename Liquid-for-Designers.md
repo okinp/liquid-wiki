@@ -120,6 +120,13 @@ optionally, `elsif` and `else`) clause:
 {% endif %}
 ```
 
+```
+# Same as above
+{% if user != null %}
+  Hello {{ user.name }}
+{% endif %}
+```
+
 ```liquid
 {% if user.name == 'tobi' %}
   Hello tobi
@@ -154,20 +161,6 @@ optionally, `elsif` and `else`) clause:
 ```
 
 ```liquid
-# Check if the user has a credit card
-{% if user.creditcard != null %}
-   poor sob
-{% endif %}
-```
-
-```liquid
-# Same as above
-{% if user.creditcard %}
-   poor sob
-{% endif %}
-```
-
-```liquid
 # Check for the size of an array
 {% if user.payments == empty %}
    you never paid !
@@ -176,7 +169,6 @@ optionally, `elsif` and `else`) clause:
 {% if user.payments.size > 0  %}
    you paid !
 {% endif %}
-
 ```
 
 ```liquid
