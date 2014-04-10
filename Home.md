@@ -89,6 +89,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Sitebox.io](http://www.sitebox.io)
 * [Stunning](https://bestunning.net)
 * [Vero (Email Marketing Software)](https://www.getvero.com)
+* [GoDaddy](https://www.godaddy.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
