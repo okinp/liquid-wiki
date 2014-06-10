@@ -39,6 +39,7 @@ h2. Quién usa Liquid?
 * "Moxie Software":http://www.moxiesoft.com/
 * "Rusic":http://rusic.com/
 * "Ombu Shop":http://ombushop.com/
+* "eGain Software":http://www.egain.com/
 * ...Add yours :)
 
 h2. ¿Por qué debería usar Liquid? 
