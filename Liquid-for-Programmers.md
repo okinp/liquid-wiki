@@ -101,11 +101,8 @@ class Random < Liquid::Block
   end
 
   def render(context)
-    if rand(@rand) == 0
-       super
-    else
-       ''
-    end
+    value = rand(@rand)
+    super.sub('^^^', value.to_s)  # calling `super` returns the content of the block
   end
 end
 
@@ -113,7 +110,7 @@ Liquid::Template.register_tag('random', Random)
 ```
 
 ```ruby
-text = " {% random 5 %} wanna hear a joke? {% endrandom %} "
+text = " {% random 5 %} you have drawn number ^^^, lucky you! {% endrandom %} "
 @template = Liquid::Template.parse(text)
-@template.render  # => In 20% of the cases, this will output "wanna hear a joke?"
+@template.render  # will return "you have drawn number 1, lucky you!" in 20% of cases
 ```
