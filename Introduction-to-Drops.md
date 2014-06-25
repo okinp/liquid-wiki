@@ -62,8 +62,17 @@ Returns the drop instance.
     file = File.read(product_view.liquid)
     template = Liquid::Template.parse(file)
     drop = ProductDrop.new(@product)
-    template.render('product' => drop)
+    template.render('product' => drop) # Please note the hash assignment is a string, not a symbol
 
 ### View
 
     Viewing product: {{ product.name }} <br/><br /> {{ product.description }} <br /> £{{ product.price }} 
+
+### Multiple Drops
+You can use assigns to assign multiple drops before you call render. This can be useful to keep the render statement clean, while still maintaining functionality. 
+
+    file = File.read(product_view.liquid)
+    template = Liquid::Template.parse(file)
+    template.assigns['product'] = ProductDrop.new(@product) # Please note the hash assignment is a string, not a symbol
+    template.assigns['collections'] = CollectionDrop.new(@product.collections)
+    template.render
