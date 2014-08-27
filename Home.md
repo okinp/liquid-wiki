@@ -26,6 +26,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Harmony](http://get.harmonyapp.com)
 * [Chameleon](http://chameleon.wikidot.com/)
 * [Cashboard](http://www.getcashboard.com)
+* [Adobe Business Catalyst](http://businesscatalyst.com/)
 * [Edicy](http://www.edicy.com)
 * [Workory](http://www.workory.com)
 * [Zendesk](http://www.zendesk.com)
