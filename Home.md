@@ -95,6 +95,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [FOX21.at](http://blog.fox21.at)
 * [Bright Sites](http://www.brightsites.com)
 * [Mode Analytics] (http://www.modeanalytics.com)
+* [Helpjuice](https://www.helpjuice.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
