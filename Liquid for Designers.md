@@ -59,7 +59,7 @@ Hello {{ 'now' | date: "%Y %h" }}
 * `replace_first` - replace the first occurrence *e.g.* `{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`
 * `remove` - remove each occurrence *e.g.* `{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`
 * `remove_first` - remove the first occurrence *e.g.* `{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`
-* `truncate` - truncate a string down to x characters
+* `truncate` - truncate a string down to x characters. It also accepts a second parameter that will append to the string *e.g.* `{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`
 * `truncatewords` - truncate a string down to x words
 * `prepend` - prepend a string *e.g.* `{{ 'bar' | prepend:'foo' }} #=> 'foobar'`
 * `append` - append a string *e.g.* `{{ 'foo' | append:'bar' }} #=> 'foobar'`
