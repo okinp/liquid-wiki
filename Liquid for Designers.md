@@ -63,6 +63,7 @@ Hello {{ 'now' | date: "%Y %h" }}
 * `truncatewords` - truncate a string down to x words
 * `prepend` - prepend a string *e.g.* `{{ 'bar' | prepend:'foo' }} #=> 'foobar'`
 * `append` - append a string *e.g.* `{{ 'foo' | append:'bar' }} #=> 'foobar'`
+* `slice` - slice a string. Takes an offset and length, *e.g.* `{{ "hello" | slice: -3, 3 }} #=> llo`
 * `minus` - subtraction *e.g.*  `{{ 4 | minus:2 }} #=> 2`
 * `plus` - addition *e.g.*  `{{ '1' | plus:'1' }} #=> '11'`, `{{ 1 | plus:1 }} #=> 2`
 * `times` - multiplication  *e.g* `{{ 5 | times:4 }} #=> 20`
