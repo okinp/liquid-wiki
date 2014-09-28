@@ -96,7 +96,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Bright Sites](http://www.brightsites.com)
 * [Mode Analytics] (http://www.modeanalytics.com)
 * [Helpjuice](https://www.helpjuice.com)
-* [Freshdesk](http://freshesk.com)
+* [Freshdesk](http://freshdesk.com)
 * [Continuity Control](http://www.continuity.net)
 * ...Add yours :)
 
