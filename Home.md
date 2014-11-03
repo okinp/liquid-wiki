@@ -98,6 +98,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Helpjuice](https://www.helpjuice.com)
 * [Freshdesk](http://freshdesk.com)
 * [Continuity Control](http://www.continuity.net)
+* [Mitingu](http://www.mitingu.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
