@@ -99,6 +99,8 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Freshdesk](http://freshdesk.com)
 * [Continuity Control](http://www.continuity.net)
 * [Mitingu](http://www.mitingu.com)
+* [Festiment](http://www.festiment.com)
+* [Unsound Music Festival](http://www.unsound.pl)
 * ...Add yours :)
 
 ## Why should I use Liquid?
