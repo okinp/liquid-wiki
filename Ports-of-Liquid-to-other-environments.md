@@ -5,3 +5,4 @@
 * [CFML-LIQUID](https://github.com/rip747/cfml-liquid) (CFML/ColdFusion)
 * [liquid.as] (https://github.com/prevailhs/liquid.as) (ActionScript 3)
 * [Liqp](https://github.com/bkiers/Liqp) (Java)
+* [Liquid](https://github.com/karlseguin/liquid) (Go)
