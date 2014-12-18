@@ -101,6 +101,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Mitingu](http://www.mitingu.com)
 * [Festiment](http://www.festiment.com)
 * [Unsound Music Festival](http://www.unsound.pl)
+* [Expertory](http://www.expertory.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
