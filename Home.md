@@ -103,6 +103,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Unsound Music Festival](http://www.unsound.pl)
 * [Expertory](http://www.expertory.com)
 * [Appboy](https://www.appboy.com)
+* [Disco](http://discolabs.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
