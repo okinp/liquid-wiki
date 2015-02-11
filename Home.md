@@ -104,6 +104,8 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Expertory](http://www.expertory.com)
 * [Appboy](https://www.appboy.com)
 * [Disco](http://discolabs.com)
+* [LavoWeb](http://lavoweb.net)
+* [DediConcept](http://www.dediconcept.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
