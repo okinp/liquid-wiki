@@ -100,6 +100,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [LavoWeb](http://lavoweb.net)
 * [DediConcept](http://www.dediconcept.com)
 * [Lucid](http://www.lucid.co.nz/)
+* [Fedora](http://usefedora.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
