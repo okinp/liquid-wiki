@@ -106,6 +106,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Disco](http://discolabs.com)
 * [LavoWeb](http://lavoweb.net)
 * [DediConcept](http://www.dediconcept.com)
+* [Lucid](http://www.lucid.co.nz/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
