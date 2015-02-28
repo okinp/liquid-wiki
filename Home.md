@@ -37,7 +37,6 @@ Liquid is a template engine which was crafted for very specific requirements
 * [PokerAffiliateSolutions](http://www.pokeraffiliatesolutions.com/)
 * [Desk.com](http://www.desk.com)
 * [Ronin](http://www.roninapp.com)
-* [CrowdVine](http://www.crowdvine.com)
 * [AboutOne](http://www.aboutone.com)
 * [RightScale](http://support.rightscale.com/15-References/Liquid_Markup_with_RightScale_Widgets)
 * [Menumill](http://www.menumill.com)
