@@ -59,7 +59,6 @@ Liquid is a template engine which was crafted for very specific requirements
 * [23 Video](http://www.23video.com/)
 * [CrystalCommerce](http://www.crystalcommerce.com/)
 * [Rackspace](http://www.rackspace.com/)
-* [Savory](http://www.savory.io/)
 * [Talent Technology](http://www.talenttech.com)
 * [WebKite](http://webkite.com/)
 * [Adam Ralph](http://adamralph.com/)
