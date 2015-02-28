@@ -55,7 +55,6 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Jekyll](http://jekyllrb.com/)
 * [Octopress](http://octopress.org/)
 * [Vnda](http://www.vnda.com.br/)
-* [Xeemio](http://www.xeemio.com/)
 * [LeadFormance](http://www.leadformance.com/)
 * [23 Video](http://www.23video.com/)
 * [CrystalCommerce](http://www.crystalcommerce.com/)
