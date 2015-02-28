@@ -28,7 +28,6 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Cashboard](http://www.getcashboard.com)
 * [Adobe Business Catalyst](http://businesscatalyst.com/)
 * [Voog](http://www.voog.com)
-* [Workory](http://www.workory.com)
 * [Zendesk](http://www.zendesk.com)
 * [SandwichBoard](http://www.sandwichboard.com/)
 * [YikeSite (CMS)](http://api.yikesite.com/)
