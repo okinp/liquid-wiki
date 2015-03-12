@@ -114,3 +114,12 @@ text = " {% random 5 %} you have drawn number ^^^, lucky you! {% endrandom %} "
 @template = Liquid::Template.parse(text)
 @template.render  # will return "you have drawn number 1, lucky you!" in 20% of cases
 ```
+
+## Caching of classes
+
+If you get errors like `A copy of ... has been removed from the module tree but is still active!` it's probably because Liquid is caching your classes in development mode, the solution is to disable it in test and development modes:
+
+```ruby
+# in config/environments/development.rb and config/environments/test.rb
+Liquid.cache_classes = false
+```
