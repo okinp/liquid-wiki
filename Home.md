@@ -103,6 +103,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Fedora](http://usefedora.com/)
 * [Jumpseller](https://jumpseller.com/)
 * [Openbay](https://www.openbay.com)
+* [Sayan's Blog](http://sayan98.github.io/blog)
 * ...Add yours :)
 
 ## Why should I use Liquid?
