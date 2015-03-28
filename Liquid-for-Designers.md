@@ -92,7 +92,7 @@ Here is a list of currently supported tags:
 
 ### Comments
 
-Comment is the simplest tag.  It just swallows content.
+Any content that you put between `{% comment %}` and `{% endcomment %}` tags is turned into a comment. 
 
 ```liquid
 We made 1 million dollars {% comment %} in losses {% endcomment %} this year
