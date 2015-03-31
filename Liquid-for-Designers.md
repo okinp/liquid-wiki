@@ -65,7 +65,7 @@ Hello {{ 'now' | date: "%Y %h" }}
 * `append` - append a string *e.g.* `{{ 'foo' | append:'bar' }} #=> 'foobar'`
 * `slice` - slice a string. Takes an offset and length, *e.g.* `{{ "hello" | slice: -3, 3 }} #=> llo`
 * `minus` - subtraction *e.g.*  `{{ 4 | minus:2 }} #=> 2`
-* `plus` - addition *e.g.*  `{{ '1' | plus:'1' }} #=> '11'`, `{{ 1 | plus:1 }} #=> 2`
+* `plus` - addition *e.g.*  `{{ '1' | plus:'1' }} #=> 2`, `{{ 1 | plus:1 }} #=> 2`
 * `times` - multiplication  *e.g* `{{ 5 | times:4 }} #=> 20`
 * `divided_by` - integer division *e.g.* `{{ 10 | divided_by:3 }} #=> 3`
 * `split` - split a string on a matching pattern *e.g.* `{{ "a~b" | split:"~" }} #=> ['a','b']`
