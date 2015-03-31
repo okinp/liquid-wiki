@@ -85,6 +85,8 @@ Here is a list of currently supported tags:
 * **comment** - Block tag, comments out the text in the block
 * **cycle** - Cycle is usually used within a loop to alternate between values, like colors or DOM classes.
 * **for** - For loop
+* **break** - Exits a for loop
+* **continue** Skips the remaining code in the current for loop and continues with the next loop
 * **if** - Standard if/else block
 * **include** - Includes another template; useful for partials
 * **raw** - temporarily disable tag processing to avoid syntax conflicts.
