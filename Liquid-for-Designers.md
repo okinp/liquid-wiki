@@ -331,6 +331,17 @@ numbers:
 # results in 1,2,3,4
 ```
 
+A for loop can take an optional `else` clause to display a block of text when there are no items in the collection:
+
+```liquid
+    # items => []
+    {% for item in items %}
+       {{ item.title }}
+    {% else %}
+       There are no items!
+    {% endfor %}
+```
+
 ### Variable Assignment
 
 You can store data in your own variables, to be used in output or other tags as
