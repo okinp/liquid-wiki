@@ -106,6 +106,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Sayan's Blog](http://sayan98.github.io/blog)
 * [Industry Mailout](https://industrymailout.com/)
 * [Near Me Marketplaces](https://near-me.com/)
+* [Growing with the Web](http://www.growingwiththeweb.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
