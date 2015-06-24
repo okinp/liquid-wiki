@@ -1,7 +1,7 @@
 * [liquid.js](https://github.com/darthapo/liquid.js) (JavaScript)
 * [DotLiquid](http://dotliquidmarkup.org/) (C#)
 * [php-liquid](https://github.com/harrydeluxe/php-liquid) (PHP)
-* [Solution](http://search.cpan.org/~sanko/Solution/lib/Solution.pm) (Perl)
+* [Template::Liquid](https://metacpan.org/pod/Template::Liquid) (Perl)
 * [CFML-LIQUID](https://github.com/rip747/cfml-liquid) (CFML/ColdFusion)
 * [liquid.as] (https://github.com/prevailhs/liquid.as) (ActionScript 3)
 * [Liqp](https://github.com/bkiers/Liqp) (Java)
