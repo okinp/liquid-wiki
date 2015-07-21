@@ -110,6 +110,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Mercury Flight](http://www.mercuryflight.com/)
 * [Drip](https://www.getdrip.com/)
 * [Sixty AS](http://www.sixty.no/)
+* [Thinkific](http://www.thinkific.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
