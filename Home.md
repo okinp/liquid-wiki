@@ -111,6 +111,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Drip](https://www.getdrip.com/)
 * [Sixty AS](http://www.sixty.no/)
 * [Thinkific](http://www.thinkific.com/)
+* [dotmailer](https://www.dotmailer.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
