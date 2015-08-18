@@ -1,4 +1,4 @@
-Liquid comes with a proper init.rb by default.
+Liquid no longer comes with a rails template handler making the text below outdated, see this issue https://github.com/Shopify/liquid/issues/21
 
 To start using liquid just extract it into vendor/plugins or better yet use the ./script/plugin script to install liquid.
 
