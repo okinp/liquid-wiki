@@ -134,7 +134,7 @@ optionally, `elsif` and `else`) clause:
 ```liquid
 {% if user.name == 'tobi' %}
   Hello tobi
-{% elsif user.name == 'bob' %}
+{% elseif user.name == 'bob' %}
   Hello bob
 {% endif %}
 ```
