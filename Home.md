@@ -113,6 +113,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Thinkific](http://www.thinkific.com/)
 * [dotmailer](https://www.dotmailer.com/)
 * [meowbox](https://meowbox.com/)
+* [Embulk](http://embulk.org)
 * ...Add yours :)
 
 ## Why should I use Liquid?
