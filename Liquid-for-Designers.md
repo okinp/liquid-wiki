@@ -62,6 +62,7 @@ Hello {{ 'now' | date: "%Y %h" }}
 * `truncate` - truncate a string down to x characters. It also accepts a second parameter that will append to the string *e.g.* `{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`
 * `truncatewords` - truncate a string down to x words
 * `prepend` - prepend a string *e.g.* `{{ 'bar' | prepend:'foo' }} #=> 'foobar'`
+* `pluralize` - return the second word if the input is not `1`, otherwise return the first word *e.g.* `{{ 3 | pluralize: 'item', 'items' }} #=> 'items'`
 * `append` - append a string *e.g.* `{{ 'foo' | append:'bar' }} #=> 'foobar'`
 * `slice` - slice a string. Takes an offset and length, *e.g.* `{{ "hello" | slice: -3, 3 }} #=> llo`
 * `minus` - subtraction *e.g.*  `{{ 4 | minus:2 }} #=> 2`
