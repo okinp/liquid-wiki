@@ -72,6 +72,7 @@ Hello {{ 'now' | date: "%Y %h" }}
 * `round` - rounds input to the nearest integer or specified number of decimals
 * `split` - split a string on a matching pattern *e.g.* `{{ "a~b" | split:"~" }} #=> ['a','b']`
 * `modulo` - remainder, *e.g.* `{{ 3 | modulo:2 }} #=> 1`
+* `reverse` - reverse sort the passed in array
 
 ## Tags
 
