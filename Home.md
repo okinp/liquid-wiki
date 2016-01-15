@@ -115,7 +115,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [meowbox](https://meowbox.com/)
 * [Embulk](http://embulk.org)
 * [Labs64 NetLicensing](http://netlicensing.io)
-# [SingleOps] (http://singleops.com/)
+* [SingleOps] (http://singleops.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
