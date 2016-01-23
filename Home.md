@@ -116,6 +116,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Embulk](http://embulk.org)
 * [Labs64 NetLicensing](http://netlicensing.io)
 * [SingleOps](http://singleops.com/)
+* [Huginn](https://github.com/cantino/huginn)
 * ...Add yours :)
 
 ## Why should I use Liquid?
