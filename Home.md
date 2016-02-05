@@ -117,6 +117,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Labs64 NetLicensing](http://netlicensing.io)
 * [SingleOps](http://singleops.com/)
 * [Huginn](https://github.com/cantino/huginn)
+* [VirtoCommerce](http://virtocommerce.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
