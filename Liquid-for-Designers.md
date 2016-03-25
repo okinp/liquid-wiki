@@ -14,9 +14,9 @@ There are two types of markup in Liquid: Output and Tag.
 
 ## Output
 
-An output tag is a set of double curly braces containing an expression; when the template is rendered, it gets replaced with the value of that expression.
+An output statement is a set of double curly braces containing an expression; when the template is rendered, it gets replaced with the value of that expression.
 
-Here is a simple example of Output:
+Here is a simple example of output:
 
 ```liquid
 Hello {{name}}
@@ -28,7 +28,7 @@ Hello {{ 'tobi' }}
 
 ### Expressions and Variables
 
-Expressions are statements that have values. Liquid templates can use expressions in several places; most often in output tags, but also as arguments to some other tags. 
+Expressions are statements that have values. Liquid templates can use expressions in several places; most often in output statements, but also as arguments to some tags or filters. 
 
 Liquid accepts the following kinds of expressions:
 
@@ -45,14 +45,19 @@ Liquid accepts the following kinds of expressions:
 * **Integers.** Integers must not be quoted.
 * **Booleans and nil.** The literal values `true`, `false`, and `nil`.
 
+Note that there is no way to write a literal array or hash as an expression; arrays and hashes must be passed into the template, or constructed obliquely with a tag or output statement.
+
 <a name="filters"></a>
 
 ### Advanced output: Filters
 
-Output markup takes filters.  Filters are simple methods.  The first parameter
-is always the output of the left side of the filter.  The return value of the
-filter will be the new left value when the next filter is run.  When there are
-no more filters, the template will receive the resulting string.
+Output markup can take filters, which modify the result of the output statement. You can invoke filters by following the output statement's main expression with: 
+
+* A pipe character (`|`)
+* The name of the filter
+* Optionally, a colon (`:`) and a comma-separated list of additional parameters to the filter. Each additional parameter must be a valid expression, and each filter pre-defines the parameters it accepts and the order in which they must be passed.
+
+Filters can also be chained together by adding additional filter statements (starting with another pipe character). The output of the previous filter will be the input for the next one. 
 
 ```liquid
 Hello {{ 'tobi' | upcase }}
@@ -60,6 +65,8 @@ Hello tobi has {{ 'tobi' | size }} letters!
 Hello {{ '*tobi*' | textilize | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
+
+Under the hood, a filter is a Ruby method that takes one or more parameters and returns a value. Parameters are passed to filters by position: the first parameter is the expression preceding the pipe character, and additional parameters can be passed using the `name: arg1, arg2` syntax described above. For more on implementing filters, see [Liquid for Programmers.](./Liquid-for-Programmers)
 
 ### Standard Filters
 
