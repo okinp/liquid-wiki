@@ -155,9 +155,37 @@ This is useful for generating content (eg, Mustache, Handlebars) which uses conf
 
 ### If / Else
 
-`if / else` should be well-known from any other programming language.
-Liquid allows you to write simple expressions in the `if` or `unless` (and
-optionally, `elsif` and `else`) clause:
+`if / else` statements should be familiar from other programming languages. Liquid implements them with the following tags:
+
+* `{% if <CONDITION> %} ... {% endif %}` --- Encloses a section of template which will only be run if the condition is true.
+* `{% elsif <CONDITION> %}` --- Can optionally be used within an `if ... endif` block. Specifies another condition; if the initial "if" fails, Liquid tries the "elsif", and runs the following section of template if it succeeds. You can use any number of elsifs in an `if` block.
+* `{% else %}` --- Can optionally be used within an `if ... endif` block, _after_ any "elsif" tags. If all preceding conditions fail, Liquid will run the section of template following the "else" tag.
+* `{% unless <CONDITION> %} ... {% endunless %}` --- The reverse of an "if" statement. Don't use "elsif" or "else" with an unless statement.
+
+The condition of an `if`, `elsif` or `unless` tag should be either a normal Liquid expression or a _comparison_ using Liquid expressions. Note that the comparison operators are implemented by the "if"-like tags; they don't work anywhere else in Liquid. 
+
+The available comparison operators are:
+
+* `==, !=,` and `<>` --- equality and inequality (the latter two are synonyms)
+    * There's a secret special value `empty` (unquoted) that you can compare arrays to; the comparison is true if the array has no members.
+* `<, <=, >, >=` --- less/greater-than
+* `contains` --- a wrapper around Ruby's `include?` method, which is implemented on strings, arrays, and hashes. If the left argument is a string and the right isn't, it stringifies the right.
+
+The available Boolean operators are:
+
+* `and`
+* `or`
+
+Note that there is NO "not" operator. Also note that you CANNOT use parentheses to control order of operations, and the precedence of the operators appears to be unspecified. So when in doubt, use nested "if" statements instead of risking it.
+
+Liquid expressions are tested for "truthiness" in what looks like a Ruby-like way:
+
+* `true` is true.
+* `false` is false.
+* Any string is true, including the empty string.
+* Any array is true.
+* Any hash is true.
+* Any nonexistent/nil value (like a missing member of a hash) is false.
 
 ```liquid
 {% if user %}
