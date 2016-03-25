@@ -34,10 +34,10 @@ Liquid accepts the following kinds of expressions:
 
 * **Variables.** The most basic kind of expression is just the name of a variable. Liquid variables are named like Ruby variables: they should consist of alphanumeric characters and underscores, should not start with a letter, and do not have any kind of leading sigil (that is, they look like `var_name`, not `$var_name`). 
 * **Array or hash access.** If you have an expression (usually a variable) whose value is an array or hash, you can use a single value from that array/hash as follows:
-    * `my_variable[<KEY EXPRESSION>]` --- The name of the variable, followed immediately by square brackets containing a key expression. 
+    * `my_variable[<KEY EXPRESSION>]` — The name of the variable, followed immediately by square brackets containing a key expression. 
         * For arrays, the key must be a literal integer or an expression that resolves to an integer. 
         * For hashes, the key must be a literal quoted string or an expression that resolves to a string. 
-    * `my_hash.key` --- Hashes also allow a shorter "dot" notation, where the name of the variable is followed by a period and the name of a key. This only works with keys that don't contain spaces, and (unlike the square bracket notation) does not allow the use of a key name stored in a variable.
+    * `my_hash.key` — Hashes also allow a shorter "dot" notation, where the name of the variable is followed by a period and the name of a key. This only works with keys that don't contain spaces, and (unlike the square bracket notation) does not allow the use of a key name stored in a variable.
     * Note: if the value of an access expression is also an array or hash, you can access values from it in the same way, and can even combine the two methods. (For example, `site.posts[34].title`.)
 * **Array or hash size.** If you have an expression whose value is an array or hash, you can follow it with `.size` to resolve to the number of elements in the original expression, as an integer.
     * If you know of any other special "methods" like this in Liquid, please update this section.
@@ -157,19 +157,19 @@ This is useful for generating content (eg, Mustache, Handlebars) which uses conf
 
 `if / else` statements should be familiar from other programming languages. Liquid implements them with the following tags:
 
-* `{% if <CONDITION> %} ... {% endif %}` --- Encloses a section of template which will only be run if the condition is true.
-* `{% elsif <CONDITION> %}` --- Can optionally be used within an `if ... endif` block. Specifies another condition; if the initial "if" fails, Liquid tries the "elsif", and runs the following section of template if it succeeds. You can use any number of elsifs in an `if` block.
-* `{% else %}` --- Can optionally be used within an `if ... endif` block, _after_ any "elsif" tags. If all preceding conditions fail, Liquid will run the section of template following the "else" tag.
-* `{% unless <CONDITION> %} ... {% endunless %}` --- The reverse of an "if" statement. Don't use "elsif" or "else" with an unless statement.
+* `{% if <CONDITION> %} ... {% endif %}` — Encloses a section of template which will only be run if the condition is true.
+* `{% elsif <CONDITION> %}` — Can optionally be used within an `if ... endif` block. Specifies another condition; if the initial "if" fails, Liquid tries the "elsif", and runs the following section of template if it succeeds. You can use any number of elsifs in an `if` block.
+* `{% else %}` — Can optionally be used within an `if ... endif` block, _after_ any "elsif" tags. If all preceding conditions fail, Liquid will run the section of template following the "else" tag.
+* `{% unless <CONDITION> %} ... {% endunless %}` — The reverse of an "if" statement. Don't use "elsif" or "else" with an unless statement.
 
 The condition of an `if`, `elsif` or `unless` tag should be either a normal Liquid expression or a _comparison_ using Liquid expressions. Note that the comparison operators are implemented by the "if"-like tags; they don't work anywhere else in Liquid. 
 
 The available comparison operators are:
 
-* `==, !=,` and `<>` --- equality and inequality (the latter two are synonyms)
+* `==, !=,` and `<>` — equality and inequality (the latter two are synonyms)
     * There's a secret special value `empty` (unquoted) that you can compare arrays to; the comparison is true if the array has no members.
-* `<, <=, >, >=` --- less/greater-than
-* `contains` --- a wrapper around Ruby's `include?` method, which is implemented on strings, arrays, and hashes. If the left argument is a string and the right isn't, it stringifies the right.
+* `<, <=, >, >=` — less/greater-than
+* `contains` — a wrapper around Ruby's `include?` method, which is implemented on strings, arrays, and hashes. If the left argument is a string and the right isn't, it stringifies the right.
 
 The available Boolean operators are:
 
@@ -360,7 +360,7 @@ When iterating a hash, `item[0]` contains the key, and `item[1]` contains the va
 {% endfor %}
 ```
 
-Instead of looping over an existing collection, you can also loop through a range of numbers. Ranges look like `(1..10)` --- parentheses containing a start value, two periods, and an end value. The start and end values must be integers or expressions that resolve to integers. 
+Instead of looping over an existing collection, you can also loop through a range of numbers. Ranges look like `(1..10)` — parentheses containing a start value, two periods, and an end value. The start and end values must be integers or expressions that resolve to integers. 
 
 ```liquid
 # if item.quantity is 4...
@@ -374,8 +374,8 @@ Instead of looping over an existing collection, you can also loop through a rang
 
 You can exit a loop early with the following tags:
 
-* `{% continue %}` --- immediately end the current iteration, and continue the "for" loop with the next value.
-* `{% break %}` --- immediately end the current iteration, then completely end the "for" loop.
+* `{% continue %}` — immediately end the current iteration, and continue the "for" loop with the next value.
+* `{% break %}` — immediately end the current iteration, then completely end the "for" loop.
 
 Both of these are only useful when combined with something like an "if" statement. 
 
