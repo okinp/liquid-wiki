@@ -32,7 +32,7 @@ Expressions are statements that have values. Liquid templates can use expression
 
 Liquid accepts the following kinds of expressions:
 
-* **Variables.** The most basic kind of expression is just the name of a variable. Liquid variables are named like Ruby variables: they should consist of alphanumeric characters and underscores, should not start with a letter, and do not have any kind of leading sigil (that is, they look like `var_name`, not `$var_name`). 
+* **Variables.** The most basic kind of expression is just the name of a variable. Liquid variables are named like Ruby variables: they should consist of alphanumeric characters and underscores, should always start with a letter, and do not have any kind of leading sigil (that is, they look like `var_name`, not `$var_name`). 
 * **Array or hash access.** If you have an expression (usually a variable) whose value is an array or hash, you can use a single value from that array/hash as follows:
     * `my_variable[<KEY EXPRESSION>]` — The name of the variable, followed immediately by square brackets containing a key expression. 
         * For arrays, the key must be a literal integer or an expression that resolves to an integer. 
