@@ -26,14 +26,18 @@ with them.
 
 ### Create your own filters
 
-Creating filters is very easy.  Basically, they are just methods which take one
-parameter and return a modified string.  You can use your own filters by passing
-an array of modules to the render call like this: `@template.render(assigns,
-[MyTextFilters, MyDateFilters])`.
+Filters are methods which take one or more
+parameters and return a value. (For details on how to call a filter with multiple parameters, see the "Output" section of [Liquid for Designers](./Liquid-for-Designers).) You can use your own filters by:
+
+1. Writing filter methods in a Ruby module. (A given module can contain any number of filter methods.)
+2. Either passing an array of filter-containing modules to the render call (like `@template.render(assigns,
+[MyTextFilters, MyDateFilters])`) or globally registering your filter modules (like `Liquid::Template.register_filter(TextFilter)`). 
+
+With filters, note that Liquid just uses the method name as the filter name; there's no extra level of name-mapping like there is with tags and blocks. As such, make sure your filter method names don't conflict with any existing filters. 
 
 ```ruby
 module TextFilter
-  def textilize(input)
+  def textilize(input) # will be available as the "textilize" filter
     RedCloth.new(input).to_html
   end
 end
@@ -65,8 +69,28 @@ Once the filter is globally registered, you can simply use it:
 
 ### Create your own tags
 
-To create a new tag, simply inherit from `Liquid::Tag` and register your block
-with `Liquid::Template`.
+"Tags" are tags that take any number of arguments, but do not contain a block of template code. 
+
+To create a new tag, simply inherit from `Liquid::Tag` and register your class
+with `Liquid::Template.register_tag`. The `register_tag` method takes two arguments: the user-facing name of the tag, and the class that implements it.
+
+#### Arguments and initialization
+
+Your tag class's `initialize` method must accept three arguments, and must call `super` at some point. 
+
+* The first argument is the name of the tag. This is whatever gets passed to `Liquid::Template.register_tag` when the tag is registered. Usually you already know what your own tag's name is, but you can take advantage of this argument to avoid hardcoding things and repeating yourself (e.g. to ensure your error messages are consistent, etc.). 
+* The second argument is whatever arguments were passed to your tag, as a single string. 
+    * **Note** that Liquid provides no standard argument handling for custom tags (or even for its own built-in tags) — all you get is unstructured text, so you're in charge of determining how many arguments you got and validating their values. 
+    * Liquid also provides no standard way to indicate whether an argument is meant to be an expression or a literal value, and it won't replace expressions with their value before passing them into your tag. Thus, if you need to treat an argument as an expression, you'll have to do something hairy like test it against the `Liquid::VariableSignature` constant and then call `Liquid::Variable.new(<ARGUMENT>).render(context)` somewhere in your own `render` method. 
+* The third argument is something I don't understand the use of. In the built-in tags, it is usually called `options`.
+
+#### Rendering
+
+Your class must define a `render` method that takes one argument (`context`) and returns a string. The contents of the `context` argument will vary depending on the environment your tag is being used in.
+
+If the output of your tag depends on the arguments it was called with in the template, you'll need to preserve those arguments as instance variables in your `initialize` method so they'll be available in `render`.
+
+#### Example
 
 ```ruby
 class Random < Liquid::Tag
@@ -90,8 +114,10 @@ Liquid::Template.register_tag('random', Random)
 
 ### Create your own tag blocks
 
+"Blocks" are tags that contain a block of template code which is delimited by a `{% end<TAGNAME> %}` tag. The opening tag of a block can also take any number of arguments.
+
 All tag blocks are parsed by Liquid.  To create a new block, you just have to
-inherit from `Liquid::Block` and register your block with `Liquid::Template`.
+inherit from `Liquid::Block` and register your class with `Liquid::Template.register_tag`. The `register_tag` method takes two arguments: the user-facing name of the tag, and the class that implements it.
 
 ```ruby
 class Random < Liquid::Block
