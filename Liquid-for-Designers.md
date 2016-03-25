@@ -14,6 +14,8 @@ There are two types of markup in Liquid: Output and Tag.
 
 ## Output
 
+An output tag is a set of double curly braces containing an expression; when the template is rendered, it gets replaced with the value of that expression.
+
 Here is a simple example of Output:
 
 ```liquid
@@ -21,6 +23,27 @@ Hello {{name}}
 Hello {{user.name}}
 Hello {{ 'tobi' }}
 ```
+
+<a id="expressions"></a>
+
+### Expressions and Variables
+
+Expressions are statements that have values. Liquid templates can use expressions in several places; most often in output tags, but also as arguments to some other tags. 
+
+Liquid accepts the following kinds of expressions:
+
+* **Variables.** The most basic kind of expression is just the name of a variable. Liquid variables are named like Ruby variables: they should consist of alphanumeric characters and underscores, should not start with a letter, and do not have any kind of leading sigil (that is, they look like `var_name`, not `$var_name`). 
+* **Array or hash access.** If you have an expression (usually a variable) whose value is an array or hash, you can use a single value from that array/hash as follows:
+    * `my_variable[<KEY EXPRESSION>]` --- The name of the variable, followed immediately by square brackets containing a key expression. 
+        * For arrays, the key must be a literal integer or an expression that resolves to an integer. 
+        * For hashes, the key must be a literal quoted string or an expression that resolves to a string. 
+    * `my_hash.key` --- Hashes also allow a shorter "dot" notation, where the name of the variable is followed by a period and the name of a key. This only works with keys that don't contain spaces, and (unlike the square bracket notation) does not allow the use of a key name stored in a variable.
+    * Note: if the value of an access expression is also an array or hash, you can access values from it in the same way, and can even combine the two methods. (For example, `site.posts[34].title`.)
+* **Array or hash size.** If you have an expression whose value is an array or hash, you can follow it with `.size` to resolve to the number of elements in the original expression, as an integer.
+    * If you know of any other special "methods" like this in Liquid, please update this section.
+* **Strings.** Literal strings must be surrounded by double quotes or single quotes (`"my string"` or `'my string'`). There is no difference; neither style allows variable interpolation. 
+* **Integers.** Integers must not be quoted.
+* **Booleans and nil.** The literal values `true`, `false`, and `nil`.
 
 <a name="filters"></a>
 
