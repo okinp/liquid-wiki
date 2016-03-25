@@ -380,9 +380,9 @@ You can exit a loop early with the following tags:
 Both of these are only useful when combined with something like an "if" statement. 
 
 ``` liquid
-{% for item in pages %}
+{% for page in pages %}
 # Skip anything in the hidden_pages array, but keep looping over the rest of the values
-{% if hidden_pages contains item.url %}
+{% if hidden_pages contains page.url %}
     {% continue %}
 {% endif %}
 # If it's not hidden, print it.
@@ -391,7 +391,7 @@ Both of these are only useful when combined with something like an "if" statemen
 ```
 
 ``` liquid
-{% for item in pages %}
+{% for page in pages %}
 * [page.title](page.url)
 # After we reach the "cutoff" page, stop the list and get on with whatever's after the "for" loop:
 {% if cutoff_page == page.url %}
