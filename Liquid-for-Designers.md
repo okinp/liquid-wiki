@@ -348,6 +348,10 @@ Liquid allows `for` loops over collections:
 {% endfor %}
 ```
 
+#### Allowed collection types
+
+For loops can iterate over **arrays, hashes, and ranges of integers.**
+
 When iterating a hash, `item[0]` contains the key, and `item[1]` contains the value:
 
 ```liquid
@@ -355,6 +359,48 @@ When iterating a hash, `item[0]` contains the key, and `item[1]` contains the va
   {{ item[0] }}: {{ item[1] }}
 {% endfor %}
 ```
+
+Instead of looping over an existing collection, you can also loop through a range of numbers. Ranges look like `(1..10)` --- parentheses containing a start value, two periods, and an end value. The start and end values must be integers or expressions that resolve to integers. 
+
+```liquid
+# if item.quantity is 4...
+{% for i in (1..item.quantity) %}
+  {{ i }}
+{% endfor %}
+# results in 1,2,3,4
+```
+
+#### Breaking and continuing
+
+You can exit a loop early with the following tags:
+
+* `{% continue %}` --- immediately end the current iteration, and continue the "for" loop with the next value.
+* `{% break %}` --- immediately end the current iteration, then completely end the "for" loop.
+
+Both of these are only useful when combined with something like an "if" statement. 
+
+``` liquid
+{% for item in pages %}
+# Skip anything in the hidden_pages array, but keep looping over the rest of the values
+{% if hidden_pages contains item.url %}
+    {% continue %}
+{% endif %}
+# If it's not hidden, print it.
+* [page.title](page.url)
+{% endfor %}
+```
+
+``` liquid
+{% for item in pages %}
+* [page.title](page.url)
+# After we reach the "cutoff" page, stop the list and get on with whatever's after the "for" loop:
+{% if cutoff_page == page.url %}
+    {% break %}
+{% endif %}
+{% endfor %}
+```
+
+#### Helper variables
 
 During every `for` loop, the following helper variables are available for extra
 styling needs:
@@ -369,11 +415,16 @@ forloop.first       # => is this the first iteration?
 forloop.last        # => is this the last iteration?
 ```
 
-There are several attributes you can use to influence which items you receive in
-your loop
+#### Optional arguments
 
-`limit:int` lets you restrict how many items you get.
-`offset:int` lets you start the collection with the nth item.
+There are several optional arguments to the `for` tag that can influence which items you receive in
+your loop and what order they appear in:
+
+* `limit:<INTEGER>` lets you restrict how many items you get.
+* `offset:<INTEGER>` lets you start the collection with the nth item.
+* `reversed` iterates over the collection from last to first.
+
+Restricting elements:
 
 ```liquid
 # array = [1,2,3,4,5,6]
@@ -383,22 +434,10 @@ your loop
 # results in 3,4
 ```
 
-Reversing the loop
+Reversing the loop:
 
 ```liquid
 {% for item in collection reversed %} {{item}} {% endfor %}
-```
-
-Instead of looping over an existing collection, you can define a range of
-numbers to loop through.  The range can be defined by both literal and variable
-numbers:
-
-```liquid
-# if item.quantity is 4...
-{% for i in (1..item.quantity) %}
-  {{ i }}
-{% endfor %}
-# results in 1,2,3,4
 ```
 
 A for loop can take an optional `else` clause to display a block of text when there are no items in the collection:
