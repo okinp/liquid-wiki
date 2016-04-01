@@ -82,7 +82,7 @@ Your tag class's `initialize` method must accept three arguments, and must call 
 * The second argument is whatever arguments were passed to your tag, as a single string. 
     * **Note** that Liquid provides no standard argument handling for custom tags (or even for its own built-in tags) — all you get is unstructured text, so you're in charge of determining how many arguments you got and validating their values. 
     * Liquid also provides no standard way to indicate whether an argument is meant to be an expression or a literal value, and it won't replace expressions with their value before passing them into your tag. Thus, if you need to treat an argument as an expression, you'll have to do something hairy like test it against the `Liquid::VariableSignature` constant and then call `Liquid::Variable.new(<ARGUMENT>).render(context)` somewhere in your own `render` method. 
-* The third argument is something I don't understand the use of. In the built-in tags, it is usually called `options`.
+* The third argument is a hash that stores Liquid options. By default it has two keys: `:locale` and `:line_numbers`, the first is a `Liquid::I18n` object, and the second, a boolean parameter that determines if error messages should display the line number the error occurred. This argument is used mostly to display localized error messages on Liquid built-in Tags and Filters.
 
 #### Rendering
 
