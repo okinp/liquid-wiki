@@ -112,6 +112,35 @@ Liquid::Template.register_tag('random', Random)
 @template.render    # => "3"
 ```
 
+### Using Assignments in Templates
+
+```ruby
+class Multiply < Liquid::Tag
+  def initialize(tag_name, factor, tokens)
+     super
+     @factor = factor.to_f
+  end
+
+  def render(context)
+    (@factor * context["multiply_by"].to_f).to_s
+  end
+end
+
+Liquid::Template.register_tag('multiply', Multiply)
+```
+
+```ruby
+@template = Liquid::Template.parse("{% multiply 5 %}")
+@template.assigns["multiply_by"] = 10
+@template.render    # => "50"
+```
+or
+```ruby
+@template = Liquid::Template.parse("{% multiply 5 %}")
+@template.render('multiply_by' => 3)    # => 15
+```
+
+
 ### Create your own tag blocks
 
 "Blocks" are tags that contain a block of template code which is delimited by a `{% end<TAGNAME> %}` tag. The opening tag of a block can also take any number of arguments.
