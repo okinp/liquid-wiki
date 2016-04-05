@@ -108,11 +108,13 @@ Liquid::Template.register_tag('random', Random)
 ```
 
 ```ruby
-@template = Liquid::Template.parse(" {% random 5 %}")
+@template = Liquid::Template.parse("{% random 5 %}")
 @template.render    # => "3"
 ```
 
 ### Using Assignments in Templates
+
+You can also use assigned variables in your tags. To do so, use the context object passed to your render() method. In this example, we multiply any value supplied to the parameter as a tag by the configured "multiply_by" assigned value.
 
 ```ruby
 class Multiply < Liquid::Tag
