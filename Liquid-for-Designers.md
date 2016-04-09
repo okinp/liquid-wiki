@@ -70,47 +70,47 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 
 ### Standard Filters
 
-* `date` - reformat a date ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
+* `append` - append a string *e.g.* `{{ 'foo' | append:'bar' }} #=> 'foobar'`
 * `capitalize` - capitalize words in the input sentence
+* `ceil` - rounds a number up to the nearest integer, *e.g.* `{{ 4.6 | ceil }} #=> 5`
+* `date` - reformat a date ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
+* `default` - returns the given variable unless it is null or the empty string, when it will return the given value, *e.g.* `{{ undefined_variable | default: "Default value" }} #=> "Default value"`
+* `divided_by` - integer division *e.g.* `{{ 10 | divided_by:3 }} #=> 3`
 * `downcase` - convert an input string to lowercase
-* `upcase` - convert an input string to uppercase
-* `first` - get the first element of the passed in array
-* `last` - get the last element of the passed in array
-* `join` - join elements of the array with certain character between them
-* `sort` - sort elements of the array
-* `reverse` - reverses the passed in array
-* `map` - map/collect an array on a given property
-* `size` - return the size of an array or string
-* `uniq` - removed duplicate elements from an array, optionally using a given property to test for uniqueness
-* `escape` - html escape a string
 * `escape_once` - returns an escaped version of html without affecting existing escaped entities
-* `url_encode` - url encode a string
-* `strip` - strips all whitespace from both ends of the string
+* `escape` - html escape a string
+* `first` - get the first element of the passed in array
+* `floor` - rounds a number down to the nearest integer, *e.g.* `{{ 4.6 | floor }} #=> 4`
+* `join` - join elements of the array with certain character between them
+* `last` - get the last element of the passed in array
 * `lstrip` - strips all whitespace from the beginning of a string
+* `map` - map/collect an array on a given property
+* `minus` - subtraction *e.g.*  `{{ 4 | minus:2 }} #=> 2`
+* `modulo` - remainder, *e.g.* `{{ 3 | modulo:2 }} #=> 1`
+* `newline_to_br` - replace each newline (\n) with html break
+* `pluralize` - return the second word if the input is not `1`, otherwise return the first word *e.g.* `{{ 3 | pluralize: 'item', 'items' }} #=> 'items'`
+* `plus` - addition *e.g.*  `{{ '1' | plus:'1' }} #=> 2`, `{{ 1 | plus:1 }} #=> 2`
+* `prepend` - prepend a string *e.g.* `{{ 'bar' | prepend:'foo' }} #=> 'foobar'`
+* `remove_first` - remove the first occurrence *e.g.* `{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`
+* `remove` - remove each occurrence *e.g.* `{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`
+* `replace_first` - replace the first occurrence *e.g.* `{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`
+* `replace` - replace each occurrence *e.g.* `{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'`
+* `reverse` - reverses the passed in array
+* `round` - rounds input to the nearest integer or specified number of decimals *e.g.* `{{ 4.5612 | round: 2 }} #=> 4.56`
 * `rstrip` - strips all whitespace from the end of a string
+* `size` - return the size of an array or string
+* `slice` - slice a string. Takes an offset and length, *e.g.* `{{ "hello" | slice: -3, 3 }} #=> llo`
+* `sort` - sort elements of the array
+* `split` - split a string on a matching pattern *e.g.* `{{ "a~b" | split:"~" }} #=> ['a','b']`
 * `strip_html` - strip html from string
 * `strip_newlines` - strip all newlines (\n) from string
-* `newline_to_br` - replace each newline (\n) with html break
-* `replace` - replace each occurrence *e.g.* `{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'`
-* `replace_first` - replace the first occurrence *e.g.* `{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`
-* `remove` - remove each occurrence *e.g.* `{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`
-* `remove_first` - remove the first occurrence *e.g.* `{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`
+* `strip` - strips all whitespace from both ends of the string
+* `times` - multiplication  *e.g* `{{ 5 | times:4 }} #=> 20`
 * `truncate` - truncate a string down to x characters. It also accepts a second parameter that will append to the string *e.g.* `{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`
 * `truncatewords` - truncate a string down to x words
-* `prepend` - prepend a string *e.g.* `{{ 'bar' | prepend:'foo' }} #=> 'foobar'`
-* `pluralize` - return the second word if the input is not `1`, otherwise return the first word *e.g.* `{{ 3 | pluralize: 'item', 'items' }} #=> 'items'`
-* `append` - append a string *e.g.* `{{ 'foo' | append:'bar' }} #=> 'foobar'`
-* `slice` - slice a string. Takes an offset and length, *e.g.* `{{ "hello" | slice: -3, 3 }} #=> llo`
-* `split` - split a string on a matching pattern *e.g.* `{{ "a~b" | split:"~" }} #=> ['a','b']`
-* `minus` - subtraction *e.g.*  `{{ 4 | minus:2 }} #=> 2`
-* `plus` - addition *e.g.*  `{{ '1' | plus:'1' }} #=> 2`, `{{ 1 | plus:1 }} #=> 2`
-* `times` - multiplication  *e.g* `{{ 5 | times:4 }} #=> 20`
-* `divided_by` - integer division *e.g.* `{{ 10 | divided_by:3 }} #=> 3`
-* `modulo` - remainder, *e.g.* `{{ 3 | modulo:2 }} #=> 1`
-* `round` - rounds input to the nearest integer or specified number of decimals *e.g.* `{{ 4.5612 | round: 2 }} #=> 4.56`
-* `floor` - rounds a number down to the nearest integer, *e.g.* `{{ 4.6 | floor }} #=> 4`
-* `ceil` - rounds a number up to the nearest integer, *e.g.* `{{ 4.6 | ceil }} #=> 5`
-* `default` - returns the given variable unless it is null or the empty string, when it will return the given value, *e.g.* `{{ undefined_variable | default: "Default value" }} #=> "Default value"`
+* `uniq` - removed duplicate elements from an array, optionally using a given property to test for uniqueness
+* `upcase` - convert an input string to uppercase
+* `url_encode` - url encode a string
 
 
 ## Tags
