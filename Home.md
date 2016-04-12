@@ -120,6 +120,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [VirtoCommerce](http://virtocommerce.com/)
 * [Grab](https://grab.co/)
 * [Silverfin](http://www.getsilverfin.com/)
+* [Syngency](http://www.syngency.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
