@@ -108,6 +108,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Near Me Marketplaces](https://near-me.com/)
 * [Growing with the Web](http://www.growingwiththeweb.com/)
 * [Mercury Flight](http://www.mercuryflight.com/)
+* [Arpith's Blog](http://arpith.xyz/)
 * [Drip](https://www.getdrip.com/)
 * [Sixty AS](http://www.sixty.no/)
 * [Thinkific](http://www.thinkific.com/)
