@@ -122,6 +122,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Grab](https://grab.co/)
 * [Silverfin](http://www.getsilverfin.com/)
 * [Syngency](http://www.syngency.com)
+* [Kajabi](http://www.kajabi.co)
 * ...Add yours :)
 
 ## Why should I use Liquid?
