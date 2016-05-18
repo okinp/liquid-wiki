@@ -94,7 +94,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Mitingu](http://www.mitingu.com)
 * [Festiment](http://www.festiment.com)
 * [Unsound Music Festival](http://www.unsound.pl)
-* [Expertory](http://www.expertory.com)
+* [Yondo](https://www.yondo.com)
 * [Appboy](https://www.appboy.com)
 * [Disco](http://discolabs.com)
 * [LavoWeb](http://lavoweb.net)
