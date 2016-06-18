@@ -124,6 +124,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Syngency](http://www.syngency.com)
 * [Kajabi](http://www.kajabi.co)
 * [Looker](https://www.looker.com)
+* [Touristed](https://en.touristed.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
