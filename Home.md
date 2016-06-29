@@ -126,7 +126,6 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Looker](https://www.looker.com)
 * [Touristed](https://en.touristed.com)
 * [MoonMail](https://moonmail.io)
-
 * ...Add yours :)
 
 ## Why should I use Liquid?
