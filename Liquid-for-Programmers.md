@@ -145,7 +145,7 @@ or
 ## Difference Between Assigns and Registers
 When you render a template, you can pass it assigns and registers.  The difference is subtle: assigns are exposed to the template, while registers are exposed to Drops, Tags, and Filters.
 ```
-@template.render({}, registers: { user: @user })
+@template.render({a_drop: ADrop.new(dropped_resource)}, registers: { user: @user })
 ```
 
 ### Create your own tag blocks
