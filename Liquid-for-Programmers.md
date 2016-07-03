@@ -180,3 +180,9 @@ If you get errors like `A copy of ... has been removed from the module tree but 
 # in config/environments/development.rb and config/environments/test.rb
 Liquid.cache_classes = false
 ```
+
+## Difference Between Assigns and Registers
+When you render a template, you can pass it assigns and registers.  The difference is subtle: assigns are exposed to the template, while registers are exposed to Drops, Tags, and Filters.
+```
+@template.render({}, registers: { user: @user })
+```
