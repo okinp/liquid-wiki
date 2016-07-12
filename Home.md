@@ -119,7 +119,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [SingleOps](http://singleops.com/)
 * [Huginn](https://github.com/cantino/huginn)
 * [VirtoCommerce](http://virtocommerce.com/)
-* [Grab](https://grab.co/)
+* [Grab](https://grab.com/)
 * [Silverfin](http://www.getsilverfin.com/)
 * [Syngency](http://www.syngency.com)
 * [Kajabi](http://www.kajabi.co)
