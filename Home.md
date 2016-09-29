@@ -127,7 +127,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Touristed](https://en.touristed.com)
 * [MoonMail](https://moonmail.io)
 * [DotNest (Orchard CMS SaaS)](https://dotnest.com)
-* [Uscreen](http://www.uscreen.tv/]
+* [Uscreen](http://www.uscreen.tv/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
