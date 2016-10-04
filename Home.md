@@ -128,6 +128,8 @@ Liquid is a template engine which was crafted for very specific requirements
 * [MoonMail](https://moonmail.io)
 * [DotNest (Orchard CMS SaaS)](https://dotnest.com)
 * [Uscreen](http://www.uscreen.tv/)
+* [microapps](http://microapps.com)
+* [MONEI](https://monei.net)
 * ...Add yours :)
 
 ## Why should I use Liquid?
