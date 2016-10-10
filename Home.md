@@ -130,6 +130,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Uscreen](http://www.uscreen.tv/)
 * [microapps](http://microapps.com)
 * [MONEI](https://monei.net)
+* [BookingSync](http://bookingsync.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
