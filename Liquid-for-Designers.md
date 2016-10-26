@@ -88,7 +88,6 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `minus` - subtraction *e.g.*  `{{ 4 | minus:2 }} #=> 2`
 * `modulo` - remainder, *e.g.* `{{ 3 | modulo:2 }} #=> 1`
 * `newline_to_br` - replace each newline (\n) with html break
-* `pluralize` - return the second word if the input is not `1`, otherwise return the first word *e.g.* `{{ 3 | pluralize: 'item', 'items' }} #=> 'items'`
 * `plus` - addition *e.g.*  `{{ '1' | plus:'1' }} #=> 2`, `{{ 1 | plus:1 }} #=> 2`
 * `prepend` - prepend a string *e.g.* `{{ 'bar' | prepend:'foo' }} #=> 'foobar'`
 * `remove_first` - remove the first occurrence *e.g.* `{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`
