@@ -131,6 +131,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [microapps](http://microapps.com)
 * [MONEI](https://monei.net)
 * [BookingSync](https://www.bookingsync.com)
+* [Handshake](https://joinhandshake.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
