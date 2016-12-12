@@ -81,7 +81,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [GiftFold](http://giftfold.com)
 * [Reamaze](http://www.reamaze.com)
 * [Sitebox.io](http://www.sitebox.io)
-* [Stunning](https://bestunning.net)
+* [Stunning](https://stunning.co)
 * [Vero (Email Marketing Software)](https://www.getvero.com)
 * [GoDaddy](https://www.godaddy.com)
 * [SendOwl](http://www.sendowl.com)
