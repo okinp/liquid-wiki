@@ -133,6 +133,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [BookingSync](https://www.bookingsync.com)
 * [Handshake](https://joinhandshake.com)
 * [Registria](https://registria.com)
+* [Taxi for Email](https://taxiforemail.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
