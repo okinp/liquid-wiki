@@ -135,6 +135,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Registria](https://registria.com)
 * [Taxi for Email](http://taxiforemail.com)
 * [Sorry™ for Status Page Theming](https://www.sorryapp.com/)
+* [Flipkart](https://www.flipkart.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
