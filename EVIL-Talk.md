@@ -1,1 +1,1 @@
-Jekyll×.hide
+Jekyll+.hide
