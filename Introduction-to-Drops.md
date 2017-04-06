@@ -4,7 +4,7 @@ Drops let you provide the user with custom functionality. They are very much lik
 
 ## Standard drop methods:
 
-before_method(method):
+before_method(method) (since version 4.0 you should use #liquid_method_missing):
 
 Called once for every invocation, even if the destination method doesn't exist. Can be used to provide dynamically named methods.
 
