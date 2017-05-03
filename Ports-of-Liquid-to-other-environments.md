@@ -7,6 +7,7 @@
 * [Liqp](https://github.com/bkiers/Liqp) (Java)
 * [Liquid](https://github.com/karlseguin/liquid) (Go)
 * [Liquid.NET](https://github.com/mikebridge/Liquid.NET) (C#)
+* [DotLiquid](https://github.com/dotliquid/dotliquid) (C#/.NET)
 * [liquid-rust](https://github.com/cobalt-org/liquid-rust) (Rust)
 * [liquidpp](https://github.com/mrpi/liquidpp) (C++14)
 * [CppLiquid](https://github.com/kainjow/CppLiquid) (C++11)
