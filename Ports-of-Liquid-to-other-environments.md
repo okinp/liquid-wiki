@@ -6,6 +6,7 @@
 * [liquid.as](https://github.com/prevailhs/liquid.as) (ActionScript 3)
 * [Liqp](https://github.com/bkiers/Liqp) (Java)
 * [Liquid](https://github.com/karlseguin/liquid) (Go)
+* [Liquid](https://github.com/osteele/liquid) (Go)
 * [Liquid.NET](https://github.com/mikebridge/Liquid.NET) (C#)
 * [DotLiquid](https://github.com/dotliquid/dotliquid) (C#/.NET)
 * [liquid-rust](https://github.com/cobalt-org/liquid-rust) (Rust)
