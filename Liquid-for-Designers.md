@@ -442,12 +442,12 @@ Reversing the loop:
 A for loop can take an optional `else` clause to display a block of text when there are no items in the collection:
 
 ```liquid
-    # items => []
-    {% for item in items %}
-       {{ item.title }}
-    {% else %}
-       There are no items!
-    {% endfor %}
+# items => []
+{% for item in items %}
+   {{ item.title }}
+{% else %}
+   There are no items!
+{% endfor %}
 ```
 
 ### Variable Assignment
