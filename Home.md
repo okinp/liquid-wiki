@@ -144,6 +144,16 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Carnival.io by Sailthru](http://carnival.io/)
 * [eventshaper](https://eventshaper.co/)
 * [192.168.1.1](http://192-168-1-1admin.com/)
+* [coast warriors](http://www.coastwarriors.com.au)
+* [shopelot](http://shopelot.ru)
+* [kuner case](http://www.kunercase.com)
+* [crystalhomelighting.com](http://crystalhomelighting.com)
+* [giri di pasta](http://www.giridipasta.it)
+* [leaf 2 go](http://www.leaf2go.ca)
+* [matador whitsundays](http://matadorwhitsundays.com.au)
+* [OZ sail](http://www.ozsail.com.au)
+* [paper writing experts](http://paperwritingexperts.com)
+* [zig zag whitsundays](http://zigzagwhitsundays.com.au)
 * ...Add yours :)
 
 ## Why should I use Liquid?
