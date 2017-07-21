@@ -154,6 +154,8 @@ Liquid is a template engine which was crafted for very specific requirements
 * [OZ sail](http://www.ozsail.com.au)
 * [paper writing experts](http://paperwritingexperts.com)
 * [zig zag whitsundays](http://zigzagwhitsundays.com.au)
+* [radish apparel](http://radishapparel.com/)
+* [place n ads](http://www.placenads.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
