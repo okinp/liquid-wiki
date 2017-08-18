@@ -147,7 +147,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [coast warriors](http://www.coastwarriors.com.au)
 * [shopelot](http://shopelot.ru)
 * [kuner case](http://www.kunercase.com)
-* [crystalhomelighting.com](http://crystalhomelighting.com)
+* [newairbet88.com](http://newairbet88.com)
 * [giri di pasta](http://www.giridipasta.it)
 * [examleela](http://www.examleela.com)
 * [matador whitsundays](http://matadorwhitsundays.com.au)
