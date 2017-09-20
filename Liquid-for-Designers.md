@@ -203,7 +203,7 @@ Liquid expressions are tested for "truthiness" in what looks like a Ruby-like wa
 ```liquid
 {% if user.name == 'tobi' %}
   Hello tobi
-{% elseif user.name == 'bob' %}
+{% elsif user.name == 'bob' %}
   Hello bob
 {% endif %}
 ```
