@@ -163,8 +163,8 @@ Liquid is a template engine which was crafted for very specific requirements
 * [zig zag whitsundays](http://zigzagwhitsundays.com.au)
 * [radish apparel](http://radishapparel.com/)
 * [place n ads](http://www.placenads.com)
-* [Dietarios](https://dietarious.com)
-*[Add Beneficiary](http://juliawall.sites.gettysburg.edu/westpoint61/net-banking-guide/sbi-inter-bank-beneficiary
+* [Dietarious](https://dietarious.com)
+* [Add Beneficiary](http://juliawall.sites.gettysburg.edu/westpoint61/net-banking-guide/sbi-inter-bank-beneficiary
 )
 * ...Add yours :)
 
