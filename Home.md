@@ -56,7 +56,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Device Magic](http://www.devicemagic.com)
 * [Spiceworks](http://www.spiceworks.com)
 * [PufferPages (CMS)](https://github.com/puffer/puffer_pages/)
-* [Displet](http://displet.com)
+* [RouterLogin](https://routerlogin.pro/)
 * [Paspartout](http://paspartout.com)
 * [TrackGrid](http://www.trackgrid.com)
 * [Jekyll](http://jekyllrb.com/)
