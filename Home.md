@@ -21,6 +21,7 @@ Liquid is a template engine which was crafted for very specific requirements
 ## Who uses Liquid?
 
 * [Shopify](http://www.shopify.com)
+* [National Digital](https://nationaldigital.com.au)
 * [Mailblast](https://mailblast.io)
 * [EmailOctopus](https://emailoctopus.com)
 * [eLocal](http://www.elocal.com)
