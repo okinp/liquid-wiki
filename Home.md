@@ -169,8 +169,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [radish apparel](http://radishapparel.com/)
 * [place n ads](http://www.placenads.com)
 * [Dietarious](https://dietarious.com)
-* [Add Beneficiary](http://juliawall.sites.gettysburg.edu/westpoint61/net-banking-guide/sbi-inter-bank-beneficiary
-)
+* [InSales](https://www.insales.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
