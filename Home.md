@@ -21,7 +21,6 @@ Liquid is a template engine which was crafted for very specific requirements
 ## Who uses Liquid?
 
 * [Shopify](http://www.shopify.com)
-* [National Digital](https://nationaldigital.com.au)
 * [Mailblast](https://mailblast.io)
 * [EmailOctopus](https://emailoctopus.com)
 * [eLocal](http://www.elocal.com)
@@ -44,7 +43,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Ronin](http://www.roninapp.com)
 * [AboutOne](http://www.aboutone.com)
 * [phen 375](http://www.forskolinfuel-reviews.com/phen375/)
-* [forskolinfuel](http://forskolinfuel-reviews.com/phen375/)
+* [forskolinfuel](http://forskolinfuel-reviews.com/)
 * [phenq](http://www.forskolinfuel-reviews.com/phenq/)
 * [forskolin](http://www.forskolinfuel-reviews.com/)
 * [best diet pills](http://www.forskolinfuel-reviews.com/best-diet-pills/)
@@ -168,8 +167,6 @@ Liquid is a template engine which was crafted for very specific requirements
 * [zig zag whitsundays](http://zigzagwhitsundays.com.au)
 * [radish apparel](http://radishapparel.com/)
 * [place n ads](http://www.placenads.com)
-* [Dietarious](https://dietarious.com)
-* [InSales](https://www.insales.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
