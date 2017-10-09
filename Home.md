@@ -123,6 +123,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Sayan's Blog](http://sayan98.github.io/blog)
 * [Industry Mailout](https://industrymailout.com/)
 * [Router Login](https://routerlogin.pro/)
+* [Dietarious](https://dietarious.com/)
 * [Growing with the Web](http://www.growingwiththeweb.com/)
 * [Mercury Flight](http://www.mercuryflight.com/)
 * [Arpith's Blog](http://arpith.xyz/)
