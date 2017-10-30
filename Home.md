@@ -92,6 +92,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [MobiCheckin (registration forms)](http://www.mobicheckin.com)
 * [Educative-Games.org](http://educative-games.org)
 * [192.168.1.1](http://192-168-1-1admin.com/)
+* [Dietarious](https://dietarious.com/)
 * [GiftFold](http://giftfold.com)
 * [Reamaze](http://www.reamaze.com)
 * [Ytblaster](http://ytblaster.com/)
