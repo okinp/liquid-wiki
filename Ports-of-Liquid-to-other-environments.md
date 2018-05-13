@@ -12,3 +12,4 @@
 * [liquid-rust](https://github.com/cobalt-org/liquid-rust) (Rust)
 * [liquidpp](https://github.com/mrpi/liquidpp) (C++14)
 * [CppLiquid](https://github.com/kainjow/CppLiquid) (C++11)
+* [liquid-elixir](https://github.com/bettyblocks/liquid-elixir) (Elixir)
