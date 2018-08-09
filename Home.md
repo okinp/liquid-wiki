@@ -144,18 +144,6 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Sorry™ for Status Page Theming](https://www.sorryapp.com/)
 * [Flipkart](https://www.flipkart.com/)
 * [Carnival.io by Sailthru](http://carnival.io/)
-* [eventshaper](https://eventshaper.co/)
-* [coast warriors](http://www.coastwarriors.com.au)
-* [shopelot](http://shopelot.ru)
-* [kuner case](http://www.kunercase.com)
-* [giri di pasta](http://www.giridipasta.it)
-* [examleela](http://www.examleela.com)
-* [matador whitsundays](http://matadorwhitsundays.com.au)
-* [OZ sail](http://www.ozsail.com.au)
-* [paper writing experts](http://paperwritingexperts.com)
-* [zig zag whitsundays](http://zigzagwhitsundays.com.au)
-* [radish apparel](http://radishapparel.com/)
-* [place n ads](http://www.placenads.com)
 * ...Add yours :)
 
 ## Why should I use Liquid?
