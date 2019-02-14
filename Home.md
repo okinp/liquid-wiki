@@ -141,6 +141,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Flipkart](https://www.flipkart.com/)
 * [Carnival.io by Sailthru](http://carnival.io/)
 * [InSales](https://www.insales.ru/)
+* [platformOS](https://www.platform-os.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
