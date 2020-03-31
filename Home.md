@@ -142,6 +142,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [Carnival.io by Sailthru](http://carnival.io/)
 * [InSales](https://www.insales.ru/)
 * [platformOS](https://www.platform-os.com/)
+* [Looker](https://docs.looker.com/reference/liquid-variables)
 * ...Add yours :)
 
 ## Why should I use Liquid?
