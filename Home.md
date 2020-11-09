@@ -143,6 +143,7 @@ Liquid is a template engine which was crafted for very specific requirements
 * [InSales](https://www.insales.ru/)
 * [platformOS](https://www.platform-os.com/)
 * [Looker](https://docs.looker.com/reference/liquid-variables)
+* [LearnWorlds](https://www.learnworlds.com/)
 * ...Add yours :)
 
 ## Why should I use Liquid?
